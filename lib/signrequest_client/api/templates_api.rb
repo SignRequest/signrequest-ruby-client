@@ -20,7 +20,7 @@ module SignRequestClient
       @api_client = api_client
     end
 
-    # 
+    # Retrieve a list of Templates
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page A page number within the paginated result set.
@@ -31,7 +31,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a list of Templates
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page A page number within the paginated result set.
@@ -75,7 +75,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve a Template
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -85,7 +85,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a Template
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters

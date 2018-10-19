@@ -4,13 +4,13 @@ All URIs are relative to *https://signrequest.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**signrequest_quick_create_create**](SignrequestQuickCreateApi.md#signrequest_quick_create_create) | **POST** /signrequest-quick-create/ | 
+[**signrequest_quick_create_create**](SignrequestQuickCreateApi.md#signrequest_quick_create_create) | **POST** /signrequest-quick-create/ | Quick create a SignRequest
 
 
 # **signrequest_quick_create_create**
 > SignRequestQuickCreate signrequest_quick_create_create(data)
 
-
+Quick create a SignRequest
 
 
 
@@ -32,6 +32,7 @@ data = SignRequestClient::SignRequestQuickCreate.new # SignRequestQuickCreate |
 
 
 begin
+  #Quick create a SignRequest
   result = api_instance.signrequest_quick_create_create(data)
   p result
 rescue SignRequestClient::ApiError => e

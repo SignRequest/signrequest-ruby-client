@@ -20,7 +20,7 @@ module SignRequestClient
       @api_client = api_client
     end
 
-    # 
+    # Retrieve a list of Team Members
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :is_active 
@@ -37,7 +37,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a list of Team Members
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :is_active 
@@ -93,7 +93,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve a Team Member
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -103,7 +103,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a Team Member
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters

@@ -17,14 +17,14 @@ module SignRequestClient
   class Template
     attr_accessor :url
 
+    # Defaults to filename
     attr_accessor :name
 
     attr_accessor :uuid
 
     attr_accessor :user
 
-    attr_accessor :team
-
+    # `m`: only me, `mo`: me and others, `o`: only others
     attr_accessor :who
 
     attr_accessor :signers
@@ -58,7 +58,6 @@ module SignRequestClient
         :'name' => :'name',
         :'uuid' => :'uuid',
         :'user' => :'user',
-        :'team' => :'team',
         :'who' => :'who',
         :'signers' => :'signers'
       }
@@ -71,7 +70,6 @@ module SignRequestClient
         :'name' => :'String',
         :'uuid' => :'String',
         :'user' => :'User',
-        :'team' => :'InlineTeam',
         :'who' => :'String',
         :'signers' => :'Array<DocumentSignerTemplateConf>'
       }
@@ -99,10 +97,6 @@ module SignRequestClient
 
       if attributes.has_key?(:'user')
         self.user = attributes[:'user']
-      end
-
-      if attributes.has_key?(:'team')
-        self.team = attributes[:'team']
       end
 
       if attributes.has_key?(:'who')
@@ -183,7 +177,6 @@ module SignRequestClient
           name == o.name &&
           uuid == o.uuid &&
           user == o.user &&
-          team == o.team &&
           who == o.who &&
           signers == o.signers
     end
@@ -197,7 +190,7 @@ module SignRequestClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [url, name, uuid, user, team, who, signers].hash
+      [url, name, uuid, user, who, signers].hash
     end
 
     # Builds the object from hash

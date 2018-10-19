@@ -20,7 +20,7 @@ module SignRequestClient
       @api_client = api_client
     end
 
-    # 
+    # Create a Webhook
     # 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -30,7 +30,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Create a Webhook
     # 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -75,7 +75,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Delete a Webhook
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -85,7 +85,7 @@ module SignRequestClient
       return nil
     end
 
-    # 
+    # Delete a Webhook
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -129,7 +129,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve a list of Webhooks
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page A page number within the paginated result set.
@@ -140,7 +140,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a list of Webhooks
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page A page number within the paginated result set.
@@ -184,7 +184,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Partially update a Webhook
     # 
     # @param uuid 
     # @param data 
@@ -195,7 +195,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Partially update a Webhook
     # 
     # @param uuid 
     # @param data 
@@ -245,7 +245,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve a Webhook
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -255,7 +255,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a Webhook
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -300,7 +300,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Update a Webhook
     # 
     # @param uuid 
     # @param data 
@@ -311,7 +311,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Update a Webhook
     # 
     # @param uuid 
     # @param data 

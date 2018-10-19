@@ -3,20 +3,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **String** |  | [optional] 
-**name** | **String** |  | [optional] 
+**status** | **String** | &#x60;co&#x60;: converting, &#x60;ne&#x60;: new, &#x60;se&#x60;: sent, &#x60;vi&#x60;: viewed, &#x60;si&#x60;: signed, &#x60;do&#x60;: downloaded, &#x60;sd&#x60;: signed and downloaded, &#x60;ca&#x60;: cancelled, &#x60;de&#x60;: declined, &#x60;ec&#x60;: error converting, &#x60;es&#x60;: error sending, &#x60;xp&#x60;: expired | [optional] 
+**name** | **String** | Defaults to filename | [optional] 
 **who** | **String** |  | 
 **nr_extra_docs** | **Integer** |  | 
 **from_email** | **String** |  | 
-**parent_doc** | **String** |  | 
 **uuid** | **String** |  | [optional] 
 **created** | **DateTime** |  | [optional] 
 **autocomplete** | **String** |  | 
-**finished_on** | **DateTime** |  | 
-**subdomain** | **String** |  | 
 **signer_emails** | **Array&lt;String&gt;** |  | [optional] 
 **status_display** | **String** |  | [optional] 
 **created_timestamp** | **Integer** |  | [optional] 
 **finished_on_timestamp** | **Integer** |  | [optional] 
+**parent_doc** | **String** |  | [optional] 
+**finished_on** | **DateTime** |  | [optional] 
+**subdomain** | **String** |  | [optional] 
 
 

@@ -20,7 +20,7 @@ module SignRequestClient
       @api_client = api_client
     end
 
-    # 
+    # Quick create a SignRequest
     # 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -30,7 +30,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Quick create a SignRequest
     # 
     # @param data 
     # @param [Hash] opts the optional parameters

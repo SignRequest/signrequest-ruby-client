@@ -4,14 +4,14 @@ All URIs are relative to *https://signrequest.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**templates_list**](TemplatesApi.md#templates_list) | **GET** /templates/ | 
-[**templates_read**](TemplatesApi.md#templates_read) | **GET** /templates/{uuid}/ | 
+[**templates_list**](TemplatesApi.md#templates_list) | **GET** /templates/ | Retrieve a list of Templates
+[**templates_read**](TemplatesApi.md#templates_read) | **GET** /templates/{uuid}/ | Retrieve a Template
 
 
 # **templates_list**
 > InlineResponse2008 templates_list(opts)
 
-
+Retrieve a list of Templates
 
 
 
@@ -35,6 +35,7 @@ opts = {
 }
 
 begin
+  #Retrieve a list of Templates
   result = api_instance.templates_list(opts)
   p result
 rescue SignRequestClient::ApiError => e
@@ -67,7 +68,7 @@ Name | Type | Description  | Notes
 # **templates_read**
 > Template templates_read(uuid)
 
-
+Retrieve a Template
 
 
 
@@ -89,6 +90,7 @@ uuid = "uuid_example" # String |
 
 
 begin
+  #Retrieve a Template
   result = api_instance.templates_read(uuid)
   p result
 rescue SignRequestClient::ApiError => e

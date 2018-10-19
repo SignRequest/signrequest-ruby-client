@@ -20,7 +20,7 @@ module SignRequestClient
       @api_client = api_client
     end
 
-    # 
+    # Create a Document
     # 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -30,7 +30,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Create a Document
     # 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -75,7 +75,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Delete a Document
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -85,7 +85,7 @@ module SignRequestClient
       return nil
     end
 
-    # 
+    # Delete a Document
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -129,68 +129,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
-    # This is only for integration partners
-    # @param uuid 
-    # @param data 
-    # @param [Hash] opts the optional parameters
-    # @return [Document]
-    def documents_delete_files(uuid, data, opts = {})
-      data, _status_code, _headers = documents_delete_files_with_http_info(uuid, data, opts)
-      return data
-    end
-
-    # 
-    # This is only for integration partners
-    # @param uuid 
-    # @param data 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Document, Fixnum, Hash)>] Document data, response status code and response headers
-    def documents_delete_files_with_http_info(uuid, data, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: DocumentsApi.documents_delete_files ..."
-      end
-      # verify the required parameter 'uuid' is set
-      if @api_client.config.client_side_validation && uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'uuid' when calling DocumentsApi.documents_delete_files"
-      end
-      # verify the required parameter 'data' is set
-      if @api_client.config.client_side_validation && data.nil?
-        fail ArgumentError, "Missing the required parameter 'data' when calling DocumentsApi.documents_delete_files"
-      end
-      # resource path
-      local_var_path = "/documents/{uuid}/delete_files/".sub('{' + 'uuid' + '}', uuid.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(data)
-      auth_names = ['Token']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Document')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DocumentsApi#documents_delete_files\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # 
+    # Retrieve a list of Documents
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :external_id 
@@ -210,7 +149,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a list of Documents
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :external_id 
@@ -272,7 +211,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve a Document
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -282,7 +221,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a Document
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters

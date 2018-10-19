@@ -20,7 +20,7 @@ module SignRequestClient
       @api_client = api_client
     end
 
-    # 
+    # Retrieve a list of Events
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :document__uuid 
@@ -44,7 +44,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a list of Events
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :document__uuid 
@@ -114,7 +114,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve an Event
     # 
     # @param id A unique integer value identifying this event.
     # @param [Hash] opts the optional parameters
@@ -124,7 +124,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve an Event
     # 
     # @param id A unique integer value identifying this event.
     # @param [Hash] opts the optional parameters

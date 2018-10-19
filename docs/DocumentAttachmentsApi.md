@@ -4,15 +4,15 @@ All URIs are relative to *https://signrequest.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**document_attachments_create**](DocumentAttachmentsApi.md#document_attachments_create) | **POST** /document-attachments/ | 
-[**document_attachments_list**](DocumentAttachmentsApi.md#document_attachments_list) | **GET** /document-attachments/ | 
-[**document_attachments_read**](DocumentAttachmentsApi.md#document_attachments_read) | **GET** /document-attachments/{uuid}/ | 
+[**document_attachments_create**](DocumentAttachmentsApi.md#document_attachments_create) | **POST** /document-attachments/ | Create a Document Attachment
+[**document_attachments_list**](DocumentAttachmentsApi.md#document_attachments_list) | **GET** /document-attachments/ | Retrieve a list of Document Attachments
+[**document_attachments_read**](DocumentAttachmentsApi.md#document_attachments_read) | **GET** /document-attachments/{uuid}/ | Retrieve a Document Attachment
 
 
 # **document_attachments_create**
 > DocumentAttachment document_attachments_create(data)
 
-
+Create a Document Attachment
 
 
 
@@ -34,6 +34,7 @@ data = SignRequestClient::DocumentAttachment.new # DocumentAttachment |
 
 
 begin
+  #Create a Document Attachment
   result = api_instance.document_attachments_create(data)
   p result
 rescue SignRequestClient::ApiError => e
@@ -65,7 +66,7 @@ Name | Type | Description  | Notes
 # **document_attachments_list**
 > InlineResponse2001 document_attachments_list(opts)
 
-
+Retrieve a list of Document Attachments
 
 
 
@@ -92,6 +93,7 @@ opts = {
 }
 
 begin
+  #Retrieve a list of Document Attachments
   result = api_instance.document_attachments_list(opts)
   p result
 rescue SignRequestClient::ApiError => e
@@ -127,7 +129,7 @@ Name | Type | Description  | Notes
 # **document_attachments_read**
 > DocumentAttachment document_attachments_read(uuid)
 
-
+Retrieve a Document Attachment
 
 
 
@@ -149,6 +151,7 @@ uuid = "uuid_example" # String |
 
 
 begin
+  #Retrieve a Document Attachment
   result = api_instance.document_attachments_read(uuid)
   p result
 rescue SignRequestClient::ApiError => e

@@ -4,18 +4,18 @@ All URIs are relative to *https://signrequest.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_tokens_create**](ApiTokensApi.md#api_tokens_create) | **POST** /api-tokens/ | 
-[**api_tokens_delete**](ApiTokensApi.md#api_tokens_delete) | **DELETE** /api-tokens/{key}/ | 
-[**api_tokens_list**](ApiTokensApi.md#api_tokens_list) | **GET** /api-tokens/ | 
-[**api_tokens_read**](ApiTokensApi.md#api_tokens_read) | **GET** /api-tokens/{key}/ | 
+[**api_tokens_create**](ApiTokensApi.md#api_tokens_create) | **POST** /api-tokens/ | Create an API token
+[**api_tokens_delete**](ApiTokensApi.md#api_tokens_delete) | **DELETE** /api-tokens/{key}/ | Delete an API token
+[**api_tokens_list**](ApiTokensApi.md#api_tokens_list) | **GET** /api-tokens/ | Retrieve a list of API tokens
+[**api_tokens_read**](ApiTokensApi.md#api_tokens_read) | **GET** /api-tokens/{key}/ | Retrieve an API token
 
 
 # **api_tokens_create**
 > AuthToken api_tokens_create(data)
 
+Create an API token
 
-
-
+You can create an API token in the [team api settings page](/#/teams). It is also possible to get or create a token using the REST api with your login credentials.
 
 ### Example
 ```ruby
@@ -35,6 +35,7 @@ data = SignRequestClient::AuthToken.new # AuthToken |
 
 
 begin
+  #Create an API token
   result = api_instance.api_tokens_create(data)
   p result
 rescue SignRequestClient::ApiError => e
@@ -66,7 +67,7 @@ Name | Type | Description  | Notes
 # **api_tokens_delete**
 > api_tokens_delete(key)
 
-
+Delete an API token
 
 
 
@@ -88,6 +89,7 @@ key = "key_example" # String | A unique value identifying this api token.
 
 
 begin
+  #Delete an API token
   api_instance.api_tokens_delete(key)
 rescue SignRequestClient::ApiError => e
   puts "Exception when calling ApiTokensApi->api_tokens_delete: #{e}"
@@ -118,7 +120,7 @@ nil (empty response body)
 # **api_tokens_list**
 > InlineResponse200 api_tokens_list(opts)
 
-
+Retrieve a list of API tokens
 
 
 
@@ -142,6 +144,7 @@ opts = {
 }
 
 begin
+  #Retrieve a list of API tokens
   result = api_instance.api_tokens_list(opts)
   p result
 rescue SignRequestClient::ApiError => e
@@ -174,7 +177,7 @@ Name | Type | Description  | Notes
 # **api_tokens_read**
 > AuthToken api_tokens_read(key)
 
-
+Retrieve an API token
 
 
 
@@ -196,6 +199,7 @@ key = "key_example" # String | A unique value identifying this api token.
 
 
 begin
+  #Retrieve an API token
   result = api_instance.api_tokens_read(key)
   p result
 rescue SignRequestClient::ApiError => e

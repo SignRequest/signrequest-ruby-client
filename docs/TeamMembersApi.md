@@ -4,14 +4,14 @@ All URIs are relative to *https://signrequest.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**team_members_list**](TeamMembersApi.md#team_members_list) | **GET** /team-members/ | 
-[**team_members_read**](TeamMembersApi.md#team_members_read) | **GET** /team-members/{uuid}/ | 
+[**team_members_list**](TeamMembersApi.md#team_members_list) | **GET** /team-members/ | Retrieve a list of Team Members
+[**team_members_read**](TeamMembersApi.md#team_members_read) | **GET** /team-members/{uuid}/ | Retrieve a Team Member
 
 
 # **team_members_list**
 > InlineResponse2006 team_members_list(opts)
 
-
+Retrieve a list of Team Members
 
 
 
@@ -41,6 +41,7 @@ opts = {
 }
 
 begin
+  #Retrieve a list of Team Members
   result = api_instance.team_members_list(opts)
   p result
 rescue SignRequestClient::ApiError => e
@@ -79,7 +80,7 @@ Name | Type | Description  | Notes
 # **team_members_read**
 > TeamMember team_members_read(uuid)
 
-
+Retrieve a Team Member
 
 
 
@@ -101,6 +102,7 @@ uuid = "uuid_example" # String |
 
 
 begin
+  #Retrieve a Team Member
   result = api_instance.team_members_read(uuid)
   p result
 rescue SignRequestClient::ApiError => e

@@ -17,6 +17,7 @@ module SignRequestClient
   class SignerAttachment
     attr_accessor :uuid
 
+    # Defaults to filename
     attr_accessor :name
 
     attr_accessor :file

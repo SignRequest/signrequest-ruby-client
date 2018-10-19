@@ -20,8 +20,8 @@ module SignRequestClient
       @api_client = api_client
     end
 
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\"email\":\"**email-of-member-to-invite@example.com**\",\"is_admin\":false,\"is_owner\":false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
+    # Create a Team
+    # Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\"email\":\"**email-of-member-to-invite@example.com**\",\"is_admin\":false,\"is_owner\":false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
     # @param data 
     # @param [Hash] opts the optional parameters
     # @return [Team]
@@ -30,8 +30,8 @@ module SignRequestClient
       return data
     end
 
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\&quot;email\&quot;:\&quot;**email-of-member-to-invite@example.com**\&quot;,\&quot;is_admin\&quot;:false,\&quot;is_owner\&quot;:false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
+    # Create a Team
+    # Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\&quot;email\&quot;:\&quot;**email-of-member-to-invite@example.com**\&quot;,\&quot;is_admin\&quot;:false,\&quot;is_owner\&quot;:false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
     # @param data 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Team, Fixnum, Hash)>] Team data, response status code and response headers
@@ -75,8 +75,8 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\"email\":\"**email-of-member-to-invite@example.com**\",\"is_admin\":false,\"is_owner\":false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
+    # Invite a Team Member
+    # Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\"email\":\"**email-of-member-to-invite@example.com**\",\"is_admin\":false,\"is_owner\":false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
     # @param subdomain 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -86,8 +86,8 @@ module SignRequestClient
       return data
     end
 
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\&quot;email\&quot;:\&quot;**email-of-member-to-invite@example.com**\&quot;,\&quot;is_admin\&quot;:false,\&quot;is_owner\&quot;:false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
+    # Invite a Team Member
+    # Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\&quot;email\&quot;:\&quot;**email-of-member-to-invite@example.com**\&quot;,\&quot;is_admin\&quot;:false,\&quot;is_owner\&quot;:false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
     # @param subdomain 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -136,8 +136,8 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\"email\":\"**email-of-member-to-invite@example.com**\",\"is_admin\":false,\"is_owner\":false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
+    # Retrieve a list of Teams
+    # Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\"email\":\"**email-of-member-to-invite@example.com**\",\"is_admin\":false,\"is_owner\":false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page A page number within the paginated result set.
     # @option opts [Integer] :limit Number of results to return per page.
@@ -147,8 +147,8 @@ module SignRequestClient
       return data
     end
 
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\&quot;email\&quot;:\&quot;**email-of-member-to-invite@example.com**\&quot;,\&quot;is_admin\&quot;:false,\&quot;is_owner\&quot;:false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
+    # Retrieve a list of Teams
+    # Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\&quot;email\&quot;:\&quot;**email-of-member-to-invite@example.com**\&quot;,\&quot;is_admin\&quot;:false,\&quot;is_owner\&quot;:false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page A page number within the paginated result set.
     # @option opts [Integer] :limit Number of results to return per page.
@@ -191,8 +191,8 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\"email\":\"**email-of-member-to-invite@example.com**\",\"is_admin\":false,\"is_owner\":false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
+    # Update a Team
+    # Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\"email\":\"**email-of-member-to-invite@example.com**\",\"is_admin\":false,\"is_owner\":false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
     # @param subdomain 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -202,8 +202,8 @@ module SignRequestClient
       return data
     end
 
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\&quot;email\&quot;:\&quot;**email-of-member-to-invite@example.com**\&quot;,\&quot;is_admin\&quot;:false,\&quot;is_owner\&quot;:false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
+    # Update a Team
+    # Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\&quot;email\&quot;:\&quot;**email-of-member-to-invite@example.com**\&quot;,\&quot;is_admin\&quot;:false,\&quot;is_owner\&quot;:false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
     # @param subdomain 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -252,8 +252,8 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\"email\":\"**email-of-member-to-invite@example.com**\",\"is_admin\":false,\"is_owner\":false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
+    # Retrieve a Team
+    # Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\"email\":\"**email-of-member-to-invite@example.com**\",\"is_admin\":false,\"is_owner\":false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
     # @param subdomain 
     # @param [Hash] opts the optional parameters
     # @return [Team]
@@ -262,8 +262,8 @@ module SignRequestClient
       return data
     end
 
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\&quot;email\&quot;:\&quot;**email-of-member-to-invite@example.com**\&quot;,\&quot;is_admin\&quot;:false,\&quot;is_owner\&quot;:false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
+    # Retrieve a Team
+    # Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\&quot;email\&quot;:\&quot;**email-of-member-to-invite@example.com**\&quot;,\&quot;is_admin\&quot;:false,\&quot;is_owner\&quot;:false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
     # @param subdomain 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Team, Fixnum, Hash)>] Team data, response status code and response headers
@@ -303,67 +303,6 @@ module SignRequestClient
         :return_type => 'Team')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TeamsApi#teams_read\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\"email\":\"**email-of-member-to-invite@example.com**\",\"is_admin\":false,\"is_owner\":false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
-    # @param subdomain 
-    # @param data 
-    # @param [Hash] opts the optional parameters
-    # @return [Team]
-    def teams_update(subdomain, data, opts = {})
-      data, _status_code, _headers = teams_update_with_http_info(subdomain, data, opts)
-      return data
-    end
-
-    # 
-    # If your application requires to create Teams and act on behalf of them you need to become an integration partner.  Required fields are **name** and **subdomain** where the subdomain is globally unique. Use **POST** to create a Team. To update a field on a Team use **PATCH**.  To use the API on behalf of a particular team change the endpoint to: *https://**{{ subdomain }}**.signrequest.com/api/v1/...*  To invite new team members you can use **POST** {\&quot;email\&quot;:\&quot;**email-of-member-to-invite@example.com**\&quot;,\&quot;is_admin\&quot;:false,\&quot;is_owner\&quot;:false} to: *https://signrequest.com/api/v1/teams/**{{ subdomain }}**/invite_member/*
-    # @param subdomain 
-    # @param data 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Team, Fixnum, Hash)>] Team data, response status code and response headers
-    def teams_update_with_http_info(subdomain, data, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: TeamsApi.teams_update ..."
-      end
-      # verify the required parameter 'subdomain' is set
-      if @api_client.config.client_side_validation && subdomain.nil?
-        fail ArgumentError, "Missing the required parameter 'subdomain' when calling TeamsApi.teams_update"
-      end
-      # verify the required parameter 'data' is set
-      if @api_client.config.client_side_validation && data.nil?
-        fail ArgumentError, "Missing the required parameter 'data' when calling TeamsApi.teams_update"
-      end
-      # resource path
-      local_var_path = "/teams/{subdomain}/".sub('{' + 'subdomain' + '}', subdomain.to_s)
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(data)
-      auth_names = ['Token']
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Team')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TeamsApi#teams_update\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

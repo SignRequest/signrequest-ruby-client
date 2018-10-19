@@ -4,18 +4,18 @@ All URIs are relative to *https://signrequest.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**webhooks_create**](WebhooksApi.md#webhooks_create) | **POST** /webhooks/ | 
-[**webhooks_delete**](WebhooksApi.md#webhooks_delete) | **DELETE** /webhooks/{uuid}/ | 
-[**webhooks_list**](WebhooksApi.md#webhooks_list) | **GET** /webhooks/ | 
-[**webhooks_partial_update**](WebhooksApi.md#webhooks_partial_update) | **PATCH** /webhooks/{uuid}/ | 
-[**webhooks_read**](WebhooksApi.md#webhooks_read) | **GET** /webhooks/{uuid}/ | 
-[**webhooks_update**](WebhooksApi.md#webhooks_update) | **PUT** /webhooks/{uuid}/ | 
+[**webhooks_create**](WebhooksApi.md#webhooks_create) | **POST** /webhooks/ | Create a Webhook
+[**webhooks_delete**](WebhooksApi.md#webhooks_delete) | **DELETE** /webhooks/{uuid}/ | Delete a Webhook
+[**webhooks_list**](WebhooksApi.md#webhooks_list) | **GET** /webhooks/ | Retrieve a list of Webhooks
+[**webhooks_partial_update**](WebhooksApi.md#webhooks_partial_update) | **PATCH** /webhooks/{uuid}/ | Partially update a Webhook
+[**webhooks_read**](WebhooksApi.md#webhooks_read) | **GET** /webhooks/{uuid}/ | Retrieve a Webhook
+[**webhooks_update**](WebhooksApi.md#webhooks_update) | **PUT** /webhooks/{uuid}/ | Update a Webhook
 
 
 # **webhooks_create**
 > WebhookSubscription webhooks_create(data)
 
-
+Create a Webhook
 
 
 
@@ -37,6 +37,7 @@ data = SignRequestClient::WebhookSubscription.new # WebhookSubscription |
 
 
 begin
+  #Create a Webhook
   result = api_instance.webhooks_create(data)
   p result
 rescue SignRequestClient::ApiError => e
@@ -68,7 +69,7 @@ Name | Type | Description  | Notes
 # **webhooks_delete**
 > webhooks_delete(uuid, )
 
-
+Delete a Webhook
 
 
 
@@ -90,6 +91,7 @@ uuid = "uuid_example" # String |
 
 
 begin
+  #Delete a Webhook
   api_instance.webhooks_delete(uuid, )
 rescue SignRequestClient::ApiError => e
   puts "Exception when calling WebhooksApi->webhooks_delete: #{e}"
@@ -120,7 +122,7 @@ nil (empty response body)
 # **webhooks_list**
 > InlineResponse2009 webhooks_list(opts)
 
-
+Retrieve a list of Webhooks
 
 
 
@@ -144,6 +146,7 @@ opts = {
 }
 
 begin
+  #Retrieve a list of Webhooks
   result = api_instance.webhooks_list(opts)
   p result
 rescue SignRequestClient::ApiError => e
@@ -176,7 +179,7 @@ Name | Type | Description  | Notes
 # **webhooks_partial_update**
 > WebhookSubscription webhooks_partial_update(uuid, data)
 
-
+Partially update a Webhook
 
 
 
@@ -200,6 +203,7 @@ data = SignRequestClient::WebhookSubscription.new # WebhookSubscription |
 
 
 begin
+  #Partially update a Webhook
   result = api_instance.webhooks_partial_update(uuid, data)
   p result
 rescue SignRequestClient::ApiError => e
@@ -232,7 +236,7 @@ Name | Type | Description  | Notes
 # **webhooks_read**
 > WebhookSubscription webhooks_read(uuid, )
 
-
+Retrieve a Webhook
 
 
 
@@ -254,6 +258,7 @@ uuid = "uuid_example" # String |
 
 
 begin
+  #Retrieve a Webhook
   result = api_instance.webhooks_read(uuid, )
   p result
 rescue SignRequestClient::ApiError => e
@@ -285,7 +290,7 @@ Name | Type | Description  | Notes
 # **webhooks_update**
 > WebhookSubscription webhooks_update(uuid, data)
 
-
+Update a Webhook
 
 
 
@@ -309,6 +314,7 @@ data = SignRequestClient::WebhookSubscription.new # WebhookSubscription |
 
 
 begin
+  #Update a Webhook
   result = api_instance.webhooks_update(uuid, data)
   p result
 rescue SignRequestClient::ApiError => e

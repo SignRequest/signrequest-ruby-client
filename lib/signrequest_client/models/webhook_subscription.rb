@@ -19,6 +19,7 @@ module SignRequestClient
 
     attr_accessor :uuid
 
+    # Optional name to easily identify what webhook is used for
     attr_accessor :name
 
     attr_accessor :event_type
@@ -26,8 +27,6 @@ module SignRequestClient
     attr_accessor :callback_url
 
     attr_accessor :integration
-
-    attr_accessor :team
 
     attr_accessor :created
 
@@ -62,7 +61,6 @@ module SignRequestClient
         :'event_type' => :'event_type',
         :'callback_url' => :'callback_url',
         :'integration' => :'integration',
-        :'team' => :'team',
         :'created' => :'created'
       }
     end
@@ -76,7 +74,6 @@ module SignRequestClient
         :'event_type' => :'String',
         :'callback_url' => :'String',
         :'integration' => :'String',
-        :'team' => :'InlineTeam',
         :'created' => :'DateTime'
       }
     end
@@ -111,10 +108,6 @@ module SignRequestClient
 
       if attributes.has_key?(:'integration')
         self.integration = attributes[:'integration']
-      end
-
-      if attributes.has_key?(:'team')
-        self.team = attributes[:'team']
       end
 
       if attributes.has_key?(:'created')
@@ -160,7 +153,7 @@ module SignRequestClient
       return false if !@uuid.nil? && @uuid.to_s.length < 1
       return false if !@name.nil? && @name.to_s.length > 255
       return false if @event_type.nil?
-      event_type_validator = EnumAttributeValidator.new('String', ["convert_error", "converted", "sending_error", "sent", "declined", "cancelled", "signed", "viewed", "downloaded", "signer_signed", "signer_email_bounced", "signer_viewed_email", "signer_viewed", "signer_forwarded", "signer_downloaded", "signrequest_received"])
+      event_type_validator = EnumAttributeValidator.new('String', ["convert_error", "converted", "sending_error", "sent", "declined", "cancelled", "expired", "signed", "viewed", "downloaded", "signer_signed", "signer_email_bounced", "signer_viewed_email", "signer_viewed", "signer_forwarded", "signer_downloaded", "signrequest_received"])
       return false unless event_type_validator.valid?(@event_type)
       return false if @callback_url.nil?
       return false if @callback_url.to_s.length > 2100
@@ -195,7 +188,7 @@ module SignRequestClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] event_type Object to be assigned
     def event_type=(event_type)
-      validator = EnumAttributeValidator.new('String', ["convert_error", "converted", "sending_error", "sent", "declined", "cancelled", "signed", "viewed", "downloaded", "signer_signed", "signer_email_bounced", "signer_viewed_email", "signer_viewed", "signer_forwarded", "signer_downloaded", "signrequest_received"])
+      validator = EnumAttributeValidator.new('String', ["convert_error", "converted", "sending_error", "sent", "declined", "cancelled", "expired", "signed", "viewed", "downloaded", "signer_signed", "signer_email_bounced", "signer_viewed_email", "signer_viewed", "signer_forwarded", "signer_downloaded", "signrequest_received"])
       unless validator.valid?(event_type)
         fail ArgumentError, "invalid value for 'event_type', must be one of #{validator.allowable_values}."
       end
@@ -241,7 +234,6 @@ module SignRequestClient
           event_type == o.event_type &&
           callback_url == o.callback_url &&
           integration == o.integration &&
-          team == o.team &&
           created == o.created
     end
 
@@ -254,7 +246,7 @@ module SignRequestClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [url, uuid, name, event_type, callback_url, integration, team, created].hash
+      [url, uuid, name, event_type, callback_url, integration, created].hash
     end
 
     # Builds the object from hash
