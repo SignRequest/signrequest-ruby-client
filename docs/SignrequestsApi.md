@@ -4,17 +4,17 @@ All URIs are relative to *https://signrequest.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**signrequests_cancel_signrequest**](SignrequestsApi.md#signrequests_cancel_signrequest) | **POST** /signrequests/{uuid}/cancel_signrequest/ | 
-[**signrequests_create**](SignrequestsApi.md#signrequests_create) | **POST** /signrequests/ | 
-[**signrequests_list**](SignrequestsApi.md#signrequests_list) | **GET** /signrequests/ | 
-[**signrequests_read**](SignrequestsApi.md#signrequests_read) | **GET** /signrequests/{uuid}/ | 
-[**signrequests_resend_signrequest_email**](SignrequestsApi.md#signrequests_resend_signrequest_email) | **POST** /signrequests/{uuid}/resend_signrequest_email/ | 
+[**signrequests_cancel_signrequest**](SignrequestsApi.md#signrequests_cancel_signrequest) | **POST** /signrequests/{uuid}/cancel_signrequest/ | Cancel a SignRequest
+[**signrequests_create**](SignrequestsApi.md#signrequests_create) | **POST** /signrequests/ | Create a SignRequest
+[**signrequests_list**](SignrequestsApi.md#signrequests_list) | **GET** /signrequests/ | Retrieve a list of SignRequests
+[**signrequests_read**](SignrequestsApi.md#signrequests_read) | **GET** /signrequests/{uuid}/ | Retrieve a SignRequest
+[**signrequests_resend_signrequest_email**](SignrequestsApi.md#signrequests_resend_signrequest_email) | **POST** /signrequests/{uuid}/resend_signrequest_email/ | Resend a SignRequest
 
 
 # **signrequests_cancel_signrequest**
-> SignRequest signrequests_cancel_signrequest(uuid, data)
+> InlineResponse201 signrequests_cancel_signrequest(uuid)
 
-
+Cancel a SignRequest
 
 
 
@@ -34,11 +34,10 @@ api_instance = SignRequestClient::SignrequestsApi.new
 
 uuid = "uuid_example" # String | 
 
-data = SignRequestClient::SignRequest.new # SignRequest | 
-
 
 begin
-  result = api_instance.signrequests_cancel_signrequest(uuid, data)
+  #Cancel a SignRequest
+  result = api_instance.signrequests_cancel_signrequest(uuid)
   p result
 rescue SignRequestClient::ApiError => e
   puts "Exception when calling SignrequestsApi->signrequests_cancel_signrequest: #{e}"
@@ -50,11 +49,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | **String**|  | 
- **data** | [**SignRequest**](SignRequest.md)|  | 
 
 ### Return type
 
-[**SignRequest**](SignRequest.md)
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 
@@ -70,7 +68,7 @@ Name | Type | Description  | Notes
 # **signrequests_create**
 > SignRequest signrequests_create(data)
 
-
+Create a SignRequest
 
 
 
@@ -92,6 +90,7 @@ data = SignRequestClient::SignRequest.new # SignRequest |
 
 
 begin
+  #Create a SignRequest
   result = api_instance.signrequests_create(data)
   p result
 rescue SignRequestClient::ApiError => e
@@ -123,7 +122,7 @@ Name | Type | Description  | Notes
 # **signrequests_list**
 > InlineResponse2005 signrequests_list(opts)
 
-
+Retrieve a list of SignRequests
 
 
 
@@ -149,6 +148,7 @@ opts = {
 }
 
 begin
+  #Retrieve a list of SignRequests
   result = api_instance.signrequests_list(opts)
   p result
 rescue SignRequestClient::ApiError => e
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 # **signrequests_read**
 > SignRequest signrequests_read(uuid)
 
-
+Retrieve a SignRequest
 
 
 
@@ -205,6 +205,7 @@ uuid = "uuid_example" # String |
 
 
 begin
+  #Retrieve a SignRequest
   result = api_instance.signrequests_read(uuid)
   p result
 rescue SignRequestClient::ApiError => e
@@ -234,9 +235,9 @@ Name | Type | Description  | Notes
 
 
 # **signrequests_resend_signrequest_email**
-> SignRequest signrequests_resend_signrequest_email(uuid, data)
+> InlineResponse2011 signrequests_resend_signrequest_email(uuid)
 
-
+Resend a SignRequest
 
 
 
@@ -256,11 +257,10 @@ api_instance = SignRequestClient::SignrequestsApi.new
 
 uuid = "uuid_example" # String | 
 
-data = SignRequestClient::SignRequest.new # SignRequest | 
-
 
 begin
-  result = api_instance.signrequests_resend_signrequest_email(uuid, data)
+  #Resend a SignRequest
+  result = api_instance.signrequests_resend_signrequest_email(uuid)
   p result
 rescue SignRequestClient::ApiError => e
   puts "Exception when calling SignrequestsApi->signrequests_resend_signrequest_email: #{e}"
@@ -272,11 +272,10 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | **String**|  | 
- **data** | [**SignRequest**](SignRequest.md)|  | 
 
 ### Return type
 
-[**SignRequest**](SignRequest.md)
+[**InlineResponse2011**](InlineResponse2011.md)
 
 ### Authorization
 

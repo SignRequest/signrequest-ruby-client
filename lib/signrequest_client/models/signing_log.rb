@@ -15,8 +15,10 @@ require 'date'
 module SignRequestClient
 
   class SigningLog
+    # Temporary URL to signing log, expires in five minutes
     attr_accessor :pdf
 
+    # SHA256 hash of PDF contents
     attr_accessor :security_hash
 
 
@@ -58,8 +60,8 @@ module SignRequestClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if !@security_hash.nil? && @security_hash.to_s.length > 64
-        invalid_properties.push("invalid value for 'security_hash', the character length must be smaller than or equal to 64.")
+      if !@security_hash.nil? && @security_hash.to_s.length < 1
+        invalid_properties.push("invalid value for 'security_hash', the character length must be great than or equal to 1.")
       end
 
       return invalid_properties
@@ -68,7 +70,7 @@ module SignRequestClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@security_hash.nil? && @security_hash.to_s.length > 64
+      return false if !@security_hash.nil? && @security_hash.to_s.length < 1
       return true
     end
 
@@ -76,8 +78,8 @@ module SignRequestClient
     # @param [Object] security_hash Value to be assigned
     def security_hash=(security_hash)
 
-      if !security_hash.nil? && security_hash.to_s.length > 64
-        fail ArgumentError, "invalid value for 'security_hash', the character length must be smaller than or equal to 64."
+      if !security_hash.nil? && security_hash.to_s.length < 1
+        fail ArgumentError, "invalid value for 'security_hash', the character length must be great than or equal to 1."
       end
 
       @security_hash = security_hash

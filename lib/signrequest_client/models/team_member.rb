@@ -21,8 +21,6 @@ module SignRequestClient
 
     attr_accessor :user
 
-    attr_accessor :team
-
     attr_accessor :is_admin
 
     attr_accessor :is_active
@@ -36,7 +34,6 @@ module SignRequestClient
         :'uuid' => :'uuid',
         :'url' => :'url',
         :'user' => :'user',
-        :'team' => :'team',
         :'is_admin' => :'is_admin',
         :'is_active' => :'is_active',
         :'is_owner' => :'is_owner'
@@ -49,7 +46,6 @@ module SignRequestClient
         :'uuid' => :'String',
         :'url' => :'String',
         :'user' => :'User',
-        :'team' => :'InlineTeam',
         :'is_admin' => :'BOOLEAN',
         :'is_active' => :'BOOLEAN',
         :'is_owner' => :'BOOLEAN'
@@ -74,10 +70,6 @@ module SignRequestClient
 
       if attributes.has_key?(:'user')
         self.user = attributes[:'user']
-      end
-
-      if attributes.has_key?(:'team')
-        self.team = attributes[:'team']
       end
 
       if attributes.has_key?(:'is_admin')
@@ -131,7 +123,6 @@ module SignRequestClient
           uuid == o.uuid &&
           url == o.url &&
           user == o.user &&
-          team == o.team &&
           is_admin == o.is_admin &&
           is_active == o.is_active &&
           is_owner == o.is_owner
@@ -146,7 +137,7 @@ module SignRequestClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [uuid, url, user, team, is_admin, is_active, is_owner].hash
+      [uuid, url, user, is_admin, is_active, is_owner].hash
     end
 
     # Builds the object from hash

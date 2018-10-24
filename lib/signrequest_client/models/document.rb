@@ -17,54 +17,64 @@ module SignRequestClient
   class Document
     attr_accessor :url
 
-    attr_accessor :team
-
     attr_accessor :uuid
 
     attr_accessor :user
 
+    # Temporary URL to original file as PDF, expires in five minutes
     attr_accessor :file_as_pdf
 
+    # Defaults to filename, including extension
     attr_accessor :name
 
+    # ID used to reference document in external system
     attr_accessor :external_id
 
+    # Shared secret used in conjunction with <a href=\"#section/Frontend-API/SignRequest-js-client-(beta)\">SignRequest-js client</a> to grant user access to a document that's not a member of the document's team
     attr_accessor :frontend_id
 
+    # Temporary URL to original file, expires in five minutes
     attr_accessor :file
 
+    # Publicly accessible URL of document to be downloaded by SignRequest
     attr_accessor :file_from_url
 
+    # URL at which to receive [event callbacks](#section/Events/Events-callback) for this document
     attr_accessor :events_callback_url
 
+    # Base64 encoded document content
     attr_accessor :file_from_content
 
+    # Filename, including extension. Required when using `file_from_content`.
     attr_accessor :file_from_content_name
 
     attr_accessor :template
 
+    # Prefill signer input data, see [prefill tags](#section/Preparing-a-document/Prefill-tags-templates)
     attr_accessor :prefill_tags
 
     attr_accessor :integrations
 
     attr_accessor :file_from_sf
 
+    # Number of days after which a finished document (signed/cancelled/declined) will be automatically deleted
     attr_accessor :auto_delete_days
 
+    # Temporary URL to signed document as PDF, expires in five minutes
     attr_accessor :pdf
 
+    # `co`: converting, `ne`: new, `se`: sent, `vi`: viewed, `si`: signed, `do`: downloaded, `sd`: signed and downloaded, `ca`: cancelled, `de`: declined, `ec`: error converting, `es`: error sending, `xp`: expired
     attr_accessor :status
 
-    attr_accessor :signrequest
-
+    # Indicates whether document was created using the API
     attr_accessor :api_used
 
-    attr_accessor :signing_log
-
+    # SHA256 hash of PDF contents
     attr_accessor :security_hash
 
     attr_accessor :attachments
 
+    # Date and time calculated using `auto_delete_days` after which a finished document (signed/cancelled/declined) will be automatically deleted
     attr_accessor :auto_delete_after
 
     class EnumAttributeValidator
@@ -93,7 +103,6 @@ module SignRequestClient
     def self.attribute_map
       {
         :'url' => :'url',
-        :'team' => :'team',
         :'uuid' => :'uuid',
         :'user' => :'user',
         :'file_as_pdf' => :'file_as_pdf',
@@ -112,9 +121,7 @@ module SignRequestClient
         :'auto_delete_days' => :'auto_delete_days',
         :'pdf' => :'pdf',
         :'status' => :'status',
-        :'signrequest' => :'signrequest',
         :'api_used' => :'api_used',
-        :'signing_log' => :'signing_log',
         :'security_hash' => :'security_hash',
         :'attachments' => :'attachments',
         :'auto_delete_after' => :'auto_delete_after'
@@ -125,7 +132,6 @@ module SignRequestClient
     def self.swagger_types
       {
         :'url' => :'String',
-        :'team' => :'InlineTeam',
         :'uuid' => :'String',
         :'user' => :'User',
         :'file_as_pdf' => :'String',
@@ -144,9 +150,7 @@ module SignRequestClient
         :'auto_delete_days' => :'Integer',
         :'pdf' => :'String',
         :'status' => :'String',
-        :'signrequest' => :'InlineSignRequest',
         :'api_used' => :'BOOLEAN',
-        :'signing_log' => :'SigningLog',
         :'security_hash' => :'String',
         :'attachments' => :'Array<DocumentAttachment>',
         :'auto_delete_after' => :'DateTime'
@@ -163,10 +167,6 @@ module SignRequestClient
 
       if attributes.has_key?(:'url')
         self.url = attributes[:'url']
-      end
-
-      if attributes.has_key?(:'team')
-        self.team = attributes[:'team']
       end
 
       if attributes.has_key?(:'uuid')
@@ -245,16 +245,8 @@ module SignRequestClient
         self.status = attributes[:'status']
       end
 
-      if attributes.has_key?(:'signrequest')
-        self.signrequest = attributes[:'signrequest']
-      end
-
       if attributes.has_key?(:'api_used')
         self.api_used = attributes[:'api_used']
-      end
-
-      if attributes.has_key?(:'signing_log')
-        self.signing_log = attributes[:'signing_log']
       end
 
       if attributes.has_key?(:'security_hash')
@@ -332,7 +324,7 @@ module SignRequestClient
       return false if !@events_callback_url.nil? && @events_callback_url.to_s.length > 2100
       return false if !@auto_delete_days.nil? && @auto_delete_days > 730
       return false if !@auto_delete_days.nil? && @auto_delete_days < 1
-      status_validator = EnumAttributeValidator.new('String', ["co", "ne", "se", "vi", "si", "do", "sd", "ca", "de", "ec", "es"])
+      status_validator = EnumAttributeValidator.new('String', ["co", "ne", "se", "vi", "si", "do", "sd", "ca", "de", "ec", "es", "xp"])
       return false unless status_validator.valid?(@status)
       return false if !@security_hash.nil? && @security_hash.to_s.length < 1
       return true
@@ -433,7 +425,7 @@ module SignRequestClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('String', ["co", "ne", "se", "vi", "si", "do", "sd", "ca", "de", "ec", "es"])
+      validator = EnumAttributeValidator.new('String', ["co", "ne", "se", "vi", "si", "do", "sd", "ca", "de", "ec", "es", "xp"])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for 'status', must be one of #{validator.allowable_values}."
       end
@@ -457,7 +449,6 @@ module SignRequestClient
       return true if self.equal?(o)
       self.class == o.class &&
           url == o.url &&
-          team == o.team &&
           uuid == o.uuid &&
           user == o.user &&
           file_as_pdf == o.file_as_pdf &&
@@ -476,9 +467,7 @@ module SignRequestClient
           auto_delete_days == o.auto_delete_days &&
           pdf == o.pdf &&
           status == o.status &&
-          signrequest == o.signrequest &&
           api_used == o.api_used &&
-          signing_log == o.signing_log &&
           security_hash == o.security_hash &&
           attachments == o.attachments &&
           auto_delete_after == o.auto_delete_after
@@ -493,7 +482,7 @@ module SignRequestClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [url, team, uuid, user, file_as_pdf, name, external_id, frontend_id, file, file_from_url, events_callback_url, file_from_content, file_from_content_name, template, prefill_tags, integrations, file_from_sf, auto_delete_days, pdf, status, signrequest, api_used, signing_log, security_hash, attachments, auto_delete_after].hash
+      [url, uuid, user, file_as_pdf, name, external_id, frontend_id, file, file_from_url, events_callback_url, file_from_content, file_from_content_name, template, prefill_tags, integrations, file_from_sf, auto_delete_days, pdf, status, api_used, security_hash, attachments, auto_delete_after].hash
     end
 
     # Builds the object from hash

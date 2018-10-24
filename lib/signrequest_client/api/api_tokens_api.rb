@@ -20,8 +20,8 @@ module SignRequestClient
       @api_client = api_client
     end
 
-    # 
-    # 
+    # Create an API token
+    # You can create an API token in the [team api settings page](/#/teams). It is also possible to get or create a token using the REST api with your login credentials.
     # @param data 
     # @param [Hash] opts the optional parameters
     # @return [AuthToken]
@@ -30,8 +30,8 @@ module SignRequestClient
       return data
     end
 
-    # 
-    # 
+    # Create an API token
+    # You can create an API token in the [team api settings page](/#/teams). It is also possible to get or create a token using the REST api with your login credentials.
     # @param data 
     # @param [Hash] opts the optional parameters
     # @return [Array<(AuthToken, Fixnum, Hash)>] AuthToken data, response status code and response headers
@@ -75,7 +75,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Delete an API token
     # 
     # @param key A unique value identifying this api token.
     # @param [Hash] opts the optional parameters
@@ -85,7 +85,7 @@ module SignRequestClient
       return nil
     end
 
-    # 
+    # Delete an API token
     # 
     # @param key A unique value identifying this api token.
     # @param [Hash] opts the optional parameters
@@ -129,7 +129,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve a list of API tokens
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page A page number within the paginated result set.
@@ -140,7 +140,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a list of API tokens
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page A page number within the paginated result set.
@@ -184,7 +184,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve an API token
     # 
     # @param key A unique value identifying this api token.
     # @param [Hash] opts the optional parameters
@@ -194,7 +194,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve an API token
     # 
     # @param key A unique value identifying this api token.
     # @param [Hash] opts the optional parameters

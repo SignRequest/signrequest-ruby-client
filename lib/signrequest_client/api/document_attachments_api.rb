@@ -20,7 +20,7 @@ module SignRequestClient
       @api_client = api_client
     end
 
-    # 
+    # Create a Document Attachment
     # 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -30,7 +30,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Create a Document Attachment
     # 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -75,7 +75,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve a list of Document Attachments
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :document__uuid 
@@ -89,7 +89,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a list of Document Attachments
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :document__uuid 
@@ -139,7 +139,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve a Document Attachment
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -149,7 +149,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a Document Attachment
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters

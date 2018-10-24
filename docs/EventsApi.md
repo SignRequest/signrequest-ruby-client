@@ -4,14 +4,14 @@ All URIs are relative to *https://signrequest.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**events_list**](EventsApi.md#events_list) | **GET** /events/ | 
-[**events_read**](EventsApi.md#events_read) | **GET** /events/{id}/ | 
+[**events_list**](EventsApi.md#events_list) | **GET** /events/ | Retrieve a list of Events
+[**events_read**](EventsApi.md#events_read) | **GET** /events/{id}/ | Retrieve an Event
 
 
 # **events_list**
 > InlineResponse2004 events_list(opts)
 
-
+Retrieve a list of Events
 
 
 
@@ -48,6 +48,7 @@ opts = {
 }
 
 begin
+  #Retrieve a list of Events
   result = api_instance.events_list(opts)
   p result
 rescue SignRequestClient::ApiError => e
@@ -93,7 +94,7 @@ Name | Type | Description  | Notes
 # **events_read**
 > Event events_read(id)
 
-
+Retrieve an Event
 
 
 
@@ -115,6 +116,7 @@ id = 56 # Integer | A unique integer value identifying this event.
 
 
 begin
+  #Retrieve an Event
   result = api_instance.events_read(id)
   p result
 rescue SignRequestClient::ApiError => e

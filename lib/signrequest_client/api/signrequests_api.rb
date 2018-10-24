@@ -20,34 +20,28 @@ module SignRequestClient
       @api_client = api_client
     end
 
-    # 
+    # Cancel a SignRequest
     # 
     # @param uuid 
-    # @param data 
     # @param [Hash] opts the optional parameters
-    # @return [SignRequest]
-    def signrequests_cancel_signrequest(uuid, data, opts = {})
-      data, _status_code, _headers = signrequests_cancel_signrequest_with_http_info(uuid, data, opts)
+    # @return [InlineResponse201]
+    def signrequests_cancel_signrequest(uuid, opts = {})
+      data, _status_code, _headers = signrequests_cancel_signrequest_with_http_info(uuid, opts)
       return data
     end
 
-    # 
+    # Cancel a SignRequest
     # 
     # @param uuid 
-    # @param data 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(SignRequest, Fixnum, Hash)>] SignRequest data, response status code and response headers
-    def signrequests_cancel_signrequest_with_http_info(uuid, data, opts = {})
+    # @return [Array<(InlineResponse201, Fixnum, Hash)>] InlineResponse201 data, response status code and response headers
+    def signrequests_cancel_signrequest_with_http_info(uuid, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SignrequestsApi.signrequests_cancel_signrequest ..."
       end
       # verify the required parameter 'uuid' is set
       if @api_client.config.client_side_validation && uuid.nil?
         fail ArgumentError, "Missing the required parameter 'uuid' when calling SignrequestsApi.signrequests_cancel_signrequest"
-      end
-      # verify the required parameter 'data' is set
-      if @api_client.config.client_side_validation && data.nil?
-        fail ArgumentError, "Missing the required parameter 'data' when calling SignrequestsApi.signrequests_cancel_signrequest"
       end
       # resource path
       local_var_path = "/signrequests/{uuid}/cancel_signrequest/".sub('{' + 'uuid' + '}', uuid.to_s)
@@ -66,7 +60,7 @@ module SignRequestClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(data)
+      post_body = nil
       auth_names = ['Token']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -74,14 +68,14 @@ module SignRequestClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'SignRequest')
+        :return_type => 'InlineResponse201')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SignrequestsApi#signrequests_cancel_signrequest\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # 
+    # Create a SignRequest
     # 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -91,7 +85,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Create a SignRequest
     # 
     # @param data 
     # @param [Hash] opts the optional parameters
@@ -136,7 +130,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve a list of SignRequests
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :who 
@@ -149,7 +143,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a list of SignRequests
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :who 
@@ -197,7 +191,7 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Retrieve a SignRequest
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -207,7 +201,7 @@ module SignRequestClient
       return data
     end
 
-    # 
+    # Retrieve a SignRequest
     # 
     # @param uuid 
     # @param [Hash] opts the optional parameters
@@ -252,34 +246,28 @@ module SignRequestClient
       return data, status_code, headers
     end
 
-    # 
+    # Resend a SignRequest
     # 
     # @param uuid 
-    # @param data 
     # @param [Hash] opts the optional parameters
-    # @return [SignRequest]
-    def signrequests_resend_signrequest_email(uuid, data, opts = {})
-      data, _status_code, _headers = signrequests_resend_signrequest_email_with_http_info(uuid, data, opts)
+    # @return [InlineResponse2011]
+    def signrequests_resend_signrequest_email(uuid, opts = {})
+      data, _status_code, _headers = signrequests_resend_signrequest_email_with_http_info(uuid, opts)
       return data
     end
 
-    # 
+    # Resend a SignRequest
     # 
     # @param uuid 
-    # @param data 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(SignRequest, Fixnum, Hash)>] SignRequest data, response status code and response headers
-    def signrequests_resend_signrequest_email_with_http_info(uuid, data, opts = {})
+    # @return [Array<(InlineResponse2011, Fixnum, Hash)>] InlineResponse2011 data, response status code and response headers
+    def signrequests_resend_signrequest_email_with_http_info(uuid, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SignrequestsApi.signrequests_resend_signrequest_email ..."
       end
       # verify the required parameter 'uuid' is set
       if @api_client.config.client_side_validation && uuid.nil?
         fail ArgumentError, "Missing the required parameter 'uuid' when calling SignrequestsApi.signrequests_resend_signrequest_email"
-      end
-      # verify the required parameter 'data' is set
-      if @api_client.config.client_side_validation && data.nil?
-        fail ArgumentError, "Missing the required parameter 'data' when calling SignrequestsApi.signrequests_resend_signrequest_email"
       end
       # resource path
       local_var_path = "/signrequests/{uuid}/resend_signrequest_email/".sub('{' + 'uuid' + '}', uuid.to_s)
@@ -298,7 +286,7 @@ module SignRequestClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(data)
+      post_body = nil
       auth_names = ['Token']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -306,7 +294,7 @@ module SignRequestClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'SignRequest')
+        :return_type => 'InlineResponse2011')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SignrequestsApi#signrequests_resend_signrequest_email\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

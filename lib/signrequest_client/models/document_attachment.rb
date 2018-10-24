@@ -19,14 +19,19 @@ module SignRequestClient
 
     attr_accessor :uuid
 
+    # Defaults to filename
     attr_accessor :name
 
+    # Temporary URL to document attachment, expires in five minutes
     attr_accessor :file
 
+    # Base64 encoded document content
     attr_accessor :file_from_content
 
+    # Filename, including extension. Required when using `file_from_content`.
     attr_accessor :file_from_content_name
 
+    # Publicly accessible URL of document to be downloaded by SignRequest
     attr_accessor :file_from_url
 
     attr_accessor :document

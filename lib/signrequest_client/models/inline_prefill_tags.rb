@@ -13,7 +13,7 @@ Swagger Codegen version: 2.3.1
 require 'date'
 
 module SignRequestClient
-
+  # Prefill signer input data, see [prefill tags](#section/Preparing-a-document/Prefill-tags-templates)
   class InlinePrefillTags
     attr_accessor :external_id
 

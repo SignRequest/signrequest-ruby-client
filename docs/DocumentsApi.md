@@ -4,17 +4,16 @@ All URIs are relative to *https://signrequest.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**documents_create**](DocumentsApi.md#documents_create) | **POST** /documents/ | 
-[**documents_delete**](DocumentsApi.md#documents_delete) | **DELETE** /documents/{uuid}/ | 
-[**documents_delete_files**](DocumentsApi.md#documents_delete_files) | **POST** /documents/{uuid}/delete_files/ | 
-[**documents_list**](DocumentsApi.md#documents_list) | **GET** /documents/ | 
-[**documents_read**](DocumentsApi.md#documents_read) | **GET** /documents/{uuid}/ | 
+[**documents_create**](DocumentsApi.md#documents_create) | **POST** /documents/ | Create a Document
+[**documents_delete**](DocumentsApi.md#documents_delete) | **DELETE** /documents/{uuid}/ | Delete a Document
+[**documents_list**](DocumentsApi.md#documents_list) | **GET** /documents/ | Retrieve a list of Documents
+[**documents_read**](DocumentsApi.md#documents_read) | **GET** /documents/{uuid}/ | Retrieve a Document
 
 
 # **documents_create**
 > Document documents_create(data)
 
-
+Create a Document
 
 
 
@@ -36,6 +35,7 @@ data = SignRequestClient::Document.new # Document |
 
 
 begin
+  #Create a Document
   result = api_instance.documents_create(data)
   p result
 rescue SignRequestClient::ApiError => e
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 # **documents_delete**
 > documents_delete(uuid)
 
-
+Delete a Document
 
 
 
@@ -89,6 +89,7 @@ uuid = "uuid_example" # String |
 
 
 begin
+  #Delete a Document
   api_instance.documents_delete(uuid)
 rescue SignRequestClient::ApiError => e
   puts "Exception when calling DocumentsApi->documents_delete: #{e}"
@@ -116,66 +117,10 @@ nil (empty response body)
 
 
 
-# **documents_delete_files**
-> Document documents_delete_files(uuid, data)
-
-
-
-This is only for integration partners
-
-### Example
-```ruby
-# load the gem
-require 'signrequest_client'
-# setup authorization
-SignRequestClient.configure do |config|
-  # Configure API key authorization: Token
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = SignRequestClient::DocumentsApi.new
-
-uuid = "uuid_example" # String | 
-
-data = SignRequestClient::Document.new # Document | 
-
-
-begin
-  result = api_instance.documents_delete_files(uuid, data)
-  p result
-rescue SignRequestClient::ApiError => e
-  puts "Exception when calling DocumentsApi->documents_delete_files: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **String**|  | 
- **data** | [**Document**](Document.md)|  | 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Token](../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
 # **documents_list**
 > InlineResponse2003 documents_list(opts)
 
-
+Retrieve a list of Documents
 
 
 
@@ -208,6 +153,7 @@ opts = {
 }
 
 begin
+  #Retrieve a list of Documents
   result = api_instance.documents_list(opts)
   p result
 rescue SignRequestClient::ApiError => e
@@ -249,7 +195,7 @@ Name | Type | Description  | Notes
 # **documents_read**
 > Document documents_read(uuid)
 
-
+Retrieve a Document
 
 
 
@@ -271,6 +217,7 @@ uuid = "uuid_example" # String |
 
 
 begin
+  #Retrieve a Document
   result = api_instance.documents_read(uuid)
   p result
 rescue SignRequestClient::ApiError => e

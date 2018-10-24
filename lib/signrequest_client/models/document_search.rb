@@ -15,8 +15,10 @@ require 'date'
 module SignRequestClient
 
   class DocumentSearch
+    # `co`: converting, `ne`: new, `se`: sent, `vi`: viewed, `si`: signed, `do`: downloaded, `sd`: signed and downloaded, `ca`: cancelled, `de`: declined, `ec`: error converting, `es`: error sending, `xp`: expired
     attr_accessor :status
 
+    # Defaults to filename
     attr_accessor :name
 
     attr_accessor :who
@@ -25,17 +27,11 @@ module SignRequestClient
 
     attr_accessor :from_email
 
-    attr_accessor :parent_doc
-
     attr_accessor :uuid
 
     attr_accessor :created
 
     attr_accessor :autocomplete
-
-    attr_accessor :finished_on
-
-    attr_accessor :subdomain
 
     attr_accessor :signer_emails
 
@@ -44,6 +40,12 @@ module SignRequestClient
     attr_accessor :created_timestamp
 
     attr_accessor :finished_on_timestamp
+
+    attr_accessor :parent_doc
+
+    attr_accessor :finished_on
+
+    attr_accessor :subdomain
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -54,16 +56,16 @@ module SignRequestClient
         :'who' => :'who',
         :'nr_extra_docs' => :'nr_extra_docs',
         :'from_email' => :'from_email',
-        :'parent_doc' => :'parent_doc',
         :'uuid' => :'uuid',
         :'created' => :'created',
         :'autocomplete' => :'autocomplete',
-        :'finished_on' => :'finished_on',
-        :'subdomain' => :'subdomain',
         :'signer_emails' => :'signer_emails',
         :'status_display' => :'status_display',
         :'created_timestamp' => :'created_timestamp',
-        :'finished_on_timestamp' => :'finished_on_timestamp'
+        :'finished_on_timestamp' => :'finished_on_timestamp',
+        :'parent_doc' => :'parent_doc',
+        :'finished_on' => :'finished_on',
+        :'subdomain' => :'subdomain'
       }
     end
 
@@ -75,16 +77,16 @@ module SignRequestClient
         :'who' => :'String',
         :'nr_extra_docs' => :'Integer',
         :'from_email' => :'String',
-        :'parent_doc' => :'String',
         :'uuid' => :'String',
         :'created' => :'DateTime',
         :'autocomplete' => :'String',
-        :'finished_on' => :'DateTime',
-        :'subdomain' => :'String',
         :'signer_emails' => :'Array<String>',
         :'status_display' => :'String',
         :'created_timestamp' => :'Integer',
-        :'finished_on_timestamp' => :'Integer'
+        :'finished_on_timestamp' => :'Integer',
+        :'parent_doc' => :'String',
+        :'finished_on' => :'DateTime',
+        :'subdomain' => :'String'
       }
     end
 
@@ -116,10 +118,6 @@ module SignRequestClient
         self.from_email = attributes[:'from_email']
       end
 
-      if attributes.has_key?(:'parent_doc')
-        self.parent_doc = attributes[:'parent_doc']
-      end
-
       if attributes.has_key?(:'uuid')
         self.uuid = attributes[:'uuid']
       end
@@ -130,14 +128,6 @@ module SignRequestClient
 
       if attributes.has_key?(:'autocomplete')
         self.autocomplete = attributes[:'autocomplete']
-      end
-
-      if attributes.has_key?(:'finished_on')
-        self.finished_on = attributes[:'finished_on']
-      end
-
-      if attributes.has_key?(:'subdomain')
-        self.subdomain = attributes[:'subdomain']
       end
 
       if attributes.has_key?(:'signer_emails')
@@ -156,6 +146,18 @@ module SignRequestClient
 
       if attributes.has_key?(:'finished_on_timestamp')
         self.finished_on_timestamp = attributes[:'finished_on_timestamp']
+      end
+
+      if attributes.has_key?(:'parent_doc')
+        self.parent_doc = attributes[:'parent_doc']
+      end
+
+      if attributes.has_key?(:'finished_on')
+        self.finished_on = attributes[:'finished_on']
+      end
+
+      if attributes.has_key?(:'subdomain')
+        self.subdomain = attributes[:'subdomain']
       end
 
     end
@@ -196,14 +198,6 @@ module SignRequestClient
         invalid_properties.push("invalid value for 'from_email', the character length must be great than or equal to 1.")
       end
 
-      if @parent_doc.nil?
-        invalid_properties.push("invalid value for 'parent_doc', parent_doc cannot be nil.")
-      end
-
-      if @parent_doc.to_s.length < 1
-        invalid_properties.push("invalid value for 'parent_doc', the character length must be great than or equal to 1.")
-      end
-
       if !@uuid.nil? && @uuid.to_s.length < 1
         invalid_properties.push("invalid value for 'uuid', the character length must be great than or equal to 1.")
       end
@@ -216,20 +210,16 @@ module SignRequestClient
         invalid_properties.push("invalid value for 'autocomplete', the character length must be great than or equal to 1.")
       end
 
-      if @finished_on.nil?
-        invalid_properties.push("invalid value for 'finished_on', finished_on cannot be nil.")
-      end
-
-      if @subdomain.nil?
-        invalid_properties.push("invalid value for 'subdomain', subdomain cannot be nil.")
-      end
-
-      if @subdomain.to_s.length < 1
-        invalid_properties.push("invalid value for 'subdomain', the character length must be great than or equal to 1.")
-      end
-
       if !@status_display.nil? && @status_display.to_s.length < 1
         invalid_properties.push("invalid value for 'status_display', the character length must be great than or equal to 1.")
+      end
+
+      if !@parent_doc.nil? && @parent_doc.to_s.length < 1
+        invalid_properties.push("invalid value for 'parent_doc', the character length must be great than or equal to 1.")
+      end
+
+      if !@subdomain.nil? && @subdomain.to_s.length < 1
+        invalid_properties.push("invalid value for 'subdomain', the character length must be great than or equal to 1.")
       end
 
       return invalid_properties
@@ -246,15 +236,12 @@ module SignRequestClient
       return false if @nr_extra_docs.nil?
       return false if @from_email.nil?
       return false if @from_email.to_s.length < 1
-      return false if @parent_doc.nil?
-      return false if @parent_doc.to_s.length < 1
       return false if !@uuid.nil? && @uuid.to_s.length < 1
       return false if @autocomplete.nil?
       return false if @autocomplete.to_s.length < 1
-      return false if @finished_on.nil?
-      return false if @subdomain.nil?
-      return false if @subdomain.to_s.length < 1
       return false if !@status_display.nil? && @status_display.to_s.length < 1
+      return false if !@parent_doc.nil? && @parent_doc.to_s.length < 1
+      return false if !@subdomain.nil? && @subdomain.to_s.length < 1
       return true
     end
 
@@ -313,20 +300,6 @@ module SignRequestClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] parent_doc Value to be assigned
-    def parent_doc=(parent_doc)
-      if parent_doc.nil?
-        fail ArgumentError, "parent_doc cannot be nil"
-      end
-
-      if parent_doc.to_s.length < 1
-        fail ArgumentError, "invalid value for 'parent_doc', the character length must be great than or equal to 1."
-      end
-
-      @parent_doc = parent_doc
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] uuid Value to be assigned
     def uuid=(uuid)
 
@@ -352,20 +325,6 @@ module SignRequestClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] subdomain Value to be assigned
-    def subdomain=(subdomain)
-      if subdomain.nil?
-        fail ArgumentError, "subdomain cannot be nil"
-      end
-
-      if subdomain.to_s.length < 1
-        fail ArgumentError, "invalid value for 'subdomain', the character length must be great than or equal to 1."
-      end
-
-      @subdomain = subdomain
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] status_display Value to be assigned
     def status_display=(status_display)
 
@@ -374,6 +333,28 @@ module SignRequestClient
       end
 
       @status_display = status_display
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] parent_doc Value to be assigned
+    def parent_doc=(parent_doc)
+
+      if !parent_doc.nil? && parent_doc.to_s.length < 1
+        fail ArgumentError, "invalid value for 'parent_doc', the character length must be great than or equal to 1."
+      end
+
+      @parent_doc = parent_doc
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] subdomain Value to be assigned
+    def subdomain=(subdomain)
+
+      if !subdomain.nil? && subdomain.to_s.length < 1
+        fail ArgumentError, "invalid value for 'subdomain', the character length must be great than or equal to 1."
+      end
+
+      @subdomain = subdomain
     end
 
     # Checks equality by comparing each attribute.
@@ -386,16 +367,16 @@ module SignRequestClient
           who == o.who &&
           nr_extra_docs == o.nr_extra_docs &&
           from_email == o.from_email &&
-          parent_doc == o.parent_doc &&
           uuid == o.uuid &&
           created == o.created &&
           autocomplete == o.autocomplete &&
-          finished_on == o.finished_on &&
-          subdomain == o.subdomain &&
           signer_emails == o.signer_emails &&
           status_display == o.status_display &&
           created_timestamp == o.created_timestamp &&
-          finished_on_timestamp == o.finished_on_timestamp
+          finished_on_timestamp == o.finished_on_timestamp &&
+          parent_doc == o.parent_doc &&
+          finished_on == o.finished_on &&
+          subdomain == o.subdomain
     end
 
     # @see the `==` method
@@ -407,7 +388,7 @@ module SignRequestClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [status, name, who, nr_extra_docs, from_email, parent_doc, uuid, created, autocomplete, finished_on, subdomain, signer_emails, status_display, created_timestamp, finished_on_timestamp].hash
+      [status, name, who, nr_extra_docs, from_email, uuid, created, autocomplete, signer_emails, status_display, created_timestamp, finished_on_timestamp, parent_doc, finished_on, subdomain].hash
     end
 
     # Builds the object from hash
