@@ -25,6 +25,7 @@ end
 
 documents_api = SignRequestClient::DocumentsApi.new
 document = SignRequestClient::Document.new
+document.file_from_url = 'https://docs.google.com/document/d/1oI2R1SxfMNZXiz3jCQvorpoklF9xq_dCJnOpkI-zo80/edit?usp=sharing'
 
 begin
   result = documents_api.documents_create(document)
