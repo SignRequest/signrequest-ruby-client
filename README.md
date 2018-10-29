@@ -1,6 +1,8 @@
 # SignRequest API Client
 
-SignRequestClient - the Ruby gem for the SignRequest API
+SignRequestClient - the offical Ruby client for [SignRequest.com](https://signrequest.com/)
+
+[![Gem Version](https://badge.fury.io/rb/signrequest_client.svg)](https://badge.fury.io/rb/signrequest_client)
 
 ## Installation
 
@@ -11,6 +13,10 @@ Add this to the Gemfile:
 And then run:
 
     bundle install
+    
+## API Documentation
+Full API documentation, including code samples, can be found here:
+https://signrequest.com/api/v1/docs/
 
 ## Getting Started
 
