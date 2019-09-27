@@ -1,4 +1,4 @@
-# SignRequest API Client
+# SignRequest Ruby Client
 
 SignRequestClient - the offical Ruby client for [SignRequest.com](https://signrequest.com/)
 
@@ -8,13 +8,14 @@ SignRequestClient - the offical Ruby client for [SignRequest.com](https://signre
 
 Add this to the Gemfile:
 
-    gem 'signrequest_client', '~> 1.0.0'
+    gem 'signrequest_client', '~> 1.1.0'
 
 And then run:
 
     bundle install
-    
+
 ## API Documentation
+
 Full API documentation, including code samples, can be found here:
 https://signrequest.com/api/v1/docs/
 
@@ -43,14 +44,11 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to _https://signrequest.com/api/v1_
+All URIs are relative to *https://signrequest.com/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SignRequestClient::ApiTokensApi* | [**api_tokens_create**](docs/ApiTokensApi.md#api_tokens_create) | **POST** /api-tokens/ | Create an API token
-*SignRequestClient::ApiTokensApi* | [**api_tokens_delete**](docs/ApiTokensApi.md#api_tokens_delete) | **DELETE** /api-tokens/{key}/ | Delete an API token
 *SignRequestClient::ApiTokensApi* | [**api_tokens_list**](docs/ApiTokensApi.md#api_tokens_list) | **GET** /api-tokens/ | Retrieve a list of API tokens
-*SignRequestClient::ApiTokensApi* | [**api_tokens_read**](docs/ApiTokensApi.md#api_tokens_read) | **GET** /api-tokens/{key}/ | Retrieve an API token
 *SignRequestClient::DocumentAttachmentsApi* | [**document_attachments_create**](docs/DocumentAttachmentsApi.md#document_attachments_create) | **POST** /document-attachments/ | Create a Document Attachment
 *SignRequestClient::DocumentAttachmentsApi* | [**document_attachments_list**](docs/DocumentAttachmentsApi.md#document_attachments_list) | **GET** /document-attachments/ | Retrieve a list of Document Attachments
 *SignRequestClient::DocumentAttachmentsApi* | [**document_attachments_read**](docs/DocumentAttachmentsApi.md#document_attachments_read) | **GET** /document-attachments/{uuid}/ | Retrieve a Document Attachment
@@ -70,6 +68,7 @@ Class | Method | HTTP request | Description
 *SignRequestClient::TeamMembersApi* | [**team_members_list**](docs/TeamMembersApi.md#team_members_list) | **GET** /team-members/ | Retrieve a list of Team Members
 *SignRequestClient::TeamMembersApi* | [**team_members_read**](docs/TeamMembersApi.md#team_members_read) | **GET** /team-members/{uuid}/ | Retrieve a Team Member
 *SignRequestClient::TeamsApi* | [**teams_create**](docs/TeamsApi.md#teams_create) | **POST** /teams/ | Create a Team
+*SignRequestClient::TeamsApi* | [**teams_delete**](docs/TeamsApi.md#teams_delete) | **DELETE** /teams/{subdomain}/ | Delete a Team
 *SignRequestClient::TeamsApi* | [**teams_invite_member**](docs/TeamsApi.md#teams_invite_member) | **POST** /teams/{subdomain}/invite_member/ | Invite a Team Member
 *SignRequestClient::TeamsApi* | [**teams_list**](docs/TeamsApi.md#teams_list) | **GET** /teams/ | Retrieve a list of Teams
 *SignRequestClient::TeamsApi* | [**teams_partial_update**](docs/TeamsApi.md#teams_partial_update) | **PATCH** /teams/{subdomain}/ | Update a Team
@@ -91,6 +90,9 @@ Class | Method | HTTP request | Description
  - [SignRequestClient::DocumentAttachment](docs/DocumentAttachment.md)
  - [SignRequestClient::DocumentSearch](docs/DocumentSearch.md)
  - [SignRequestClient::DocumentSignerTemplateConf](docs/DocumentSignerTemplateConf.md)
+ - [SignRequestClient::DocumentSigningLog](docs/DocumentSigningLog.md)
+ - [SignRequestClient::DocumentSignrequest](docs/DocumentSignrequest.md)
+ - [SignRequestClient::DocumentTeam](docs/DocumentTeam.md)
  - [SignRequestClient::Event](docs/Event.md)
  - [SignRequestClient::FileFromSf](docs/FileFromSf.md)
  - [SignRequestClient::InlineDocumentSignerIntegrationData](docs/InlineDocumentSignerIntegrationData.md)
@@ -125,4 +127,14 @@ Class | Method | HTTP request | Description
  - [SignRequestClient::Template](docs/Template.md)
  - [SignRequestClient::User](docs/User.md)
  - [SignRequestClient::WebhookSubscription](docs/WebhookSubscription.md)
+
+
+## Documentation for Authorization
+
+
+### Token
+
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
 

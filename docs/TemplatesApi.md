@@ -86,7 +86,7 @@ end
 
 api_instance = SignRequestClient::TemplatesApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 
 begin

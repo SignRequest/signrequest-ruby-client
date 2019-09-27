@@ -11,5 +11,7 @@ Name | Type | Description | Notes
 **primary_color** | **String** |  | [optional] 
 **events_callback_url** | **String** |  | [optional] 
 **members** | [**Array&lt;InlineTeamMember&gt;**](InlineTeamMember.md) |  | [optional] 
+**delete_after** | **DateTime** | When filled this team will be deleted after this date | [optional] 
+**sandbox** | **BOOLEAN** | Indicates whether team is in Sandbox mode | [optional] 
 
 

@@ -87,7 +87,7 @@ end
 
 api_instance = SignRequestClient::WebhooksApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 
 begin
@@ -197,7 +197,7 @@ end
 
 api_instance = SignRequestClient::WebhooksApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 data = SignRequestClient::WebhookSubscription.new # WebhookSubscription | 
 
@@ -254,7 +254,7 @@ end
 
 api_instance = SignRequestClient::WebhooksApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 
 begin
@@ -308,7 +308,7 @@ end
 
 api_instance = SignRequestClient::WebhooksApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 data = SignRequestClient::WebhookSubscription.new # WebhookSubscription | 
 

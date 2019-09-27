@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cancelled** | **BOOLEAN** |  | 
 **detail** | **String** |  | 
+**cancelled** | **BOOLEAN** |  | 
 
 

@@ -85,7 +85,7 @@ end
 
 api_instance = SignRequestClient::DocumentsApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 
 begin
@@ -139,15 +139,15 @@ end
 api_instance = SignRequestClient::DocumentsApi.new
 
 opts = { 
-  external_id: "external_id_example", # String | 
-  signrequest__who: "signrequest__who_example", # String | 
-  signrequest__from_email: "signrequest__from_email_example", # String | 
-  status: "status_example", # String | 
-  user__email: "user__email_example", # String | 
-  user__first_name: "user__first_name_example", # String | 
-  user__last_name: "user__last_name_example", # String | 
-  created: "created_example", # String | 
-  modified: "modified_example", # String | 
+  external_id: 'external_id_example', # String | 
+  signrequest__who: 'signrequest__who_example', # String | 
+  signrequest__from_email: 'signrequest__from_email_example', # String | 
+  status: 'status_example', # String | 
+  user__email: 'user__email_example', # String | 
+  user__first_name: 'user__first_name_example', # String | 
+  user__last_name: 'user__last_name_example', # String | 
+  created: 'created_example', # String | 
+  modified: 'modified_example', # String | 
   page: 56, # Integer | A page number within the paginated result set.
   limit: 56 # Integer | Number of results to return per page.
 }
@@ -213,7 +213,7 @@ end
 
 api_instance = SignRequestClient::DocumentsApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 
 begin

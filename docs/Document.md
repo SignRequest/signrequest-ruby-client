@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **String** |  | [optional] 
+**team** | [**DocumentTeam**](DocumentTeam.md) |  | [optional] 
 **uuid** | **String** |  | [optional] 
 **user** | [**User**](User.md) |  | [optional] 
 **file_as_pdf** | **String** | Temporary URL to original file as PDF, expires in five minutes | [optional] 
@@ -20,11 +21,16 @@ Name | Type | Description | Notes
 **integrations** | [**Array&lt;InlineIntegrationData&gt;**](InlineIntegrationData.md) |  | [optional] 
 **file_from_sf** | [**FileFromSf**](FileFromSf.md) |  | [optional] 
 **auto_delete_days** | **Integer** | Number of days after which a finished document (signed/cancelled/declined) will be automatically deleted | [optional] 
+**auto_expire_days** | **Integer** | Number of days after which a non finished document will be automatically expired | [optional] 
 **pdf** | **String** | Temporary URL to signed document as PDF, expires in five minutes | [optional] 
 **status** | **String** | &#x60;co&#x60;: converting, &#x60;ne&#x60;: new, &#x60;se&#x60;: sent, &#x60;vi&#x60;: viewed, &#x60;si&#x60;: signed, &#x60;do&#x60;: downloaded, &#x60;sd&#x60;: signed and downloaded, &#x60;ca&#x60;: cancelled, &#x60;de&#x60;: declined, &#x60;ec&#x60;: error converting, &#x60;es&#x60;: error sending, &#x60;xp&#x60;: expired | [optional] 
+**signrequest** | [**DocumentSignrequest**](DocumentSignrequest.md) |  | [optional] 
 **api_used** | **BOOLEAN** | Indicates whether document was created using the API | [optional] 
+**signing_log** | [**DocumentSigningLog**](DocumentSigningLog.md) |  | [optional] 
 **security_hash** | **String** | SHA256 hash of PDF contents | [optional] 
 **attachments** | [**Array&lt;DocumentAttachment&gt;**](DocumentAttachment.md) |  | [optional] 
 **auto_delete_after** | **DateTime** | Date and time calculated using &#x60;auto_delete_days&#x60; after which a finished document (signed/cancelled/declined) will be automatically deleted | [optional] 
+**sandbox** | **BOOLEAN** | Indicates whether document was created as part of a sandbox team | [optional] 
+**auto_expire_after** | **DateTime** | Date and time calculated using &#x60;auto_expire_days&#x60; after which a non finished document will be automatically expired | [optional] 
 
 

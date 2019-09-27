@@ -13,32 +13,28 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module SignRequestClient
-  class InlineResponse2003
-    attr_accessor :count
+  class DocumentTeam
+    attr_accessor :name
 
-    attr_accessor :_next
+    attr_accessor :subdomain
 
-    attr_accessor :previous
-
-    attr_accessor :results
+    attr_accessor :url
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'_next' => :'next',
-        :'previous' => :'previous',
-        :'results' => :'results'
+        :'name' => :'name',
+        :'subdomain' => :'subdomain',
+        :'url' => :'url'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'count' => :'Integer',
-        :'_next' => :'String',
-        :'previous' => :'String',
-        :'results' => :'Array<Document>'
+        :'name' => :'String',
+        :'subdomain' => :'String',
+        :'url' => :'String'
       }
     end
 
@@ -50,22 +46,16 @@ module SignRequestClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'count')
-        self.count = attributes[:'count']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'next')
-        self._next = attributes[:'next']
+      if attributes.has_key?(:'subdomain')
+        self.subdomain = attributes[:'subdomain']
       end
 
-      if attributes.has_key?(:'previous')
-        self.previous = attributes[:'previous']
-      end
-
-      if attributes.has_key?(:'results')
-        if (value = attributes[:'results']).is_a?(Array)
-          self.results = value
-        end
+      if attributes.has_key?(:'url')
+        self.url = attributes[:'url']
       end
     end
 
@@ -73,12 +63,16 @@ module SignRequestClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @count.nil?
-        invalid_properties.push('invalid value for "count", count cannot be nil.')
+      if !@name.nil? && @name.to_s.length < 1
+        invalid_properties.push('invalid value for "name", the character length must be great than or equal to 1.')
       end
 
-      if @results.nil?
-        invalid_properties.push('invalid value for "results", results cannot be nil.')
+      if !@subdomain.nil? && @subdomain.to_s.length < 1
+        invalid_properties.push('invalid value for "subdomain", the character length must be great than or equal to 1.')
+      end
+
+      if !@subdomain.nil? && @subdomain !~ Regexp.new(/^[-a-zA-Z0-9_]+$/)
+        invalid_properties.push('invalid value for "subdomain", must conform to the pattern /^[-a-zA-Z0-9_]+$/.')
       end
 
       invalid_properties
@@ -87,9 +81,34 @@ module SignRequestClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @count.nil?
-      return false if @results.nil?
+      return false if !@name.nil? && @name.to_s.length < 1
+      return false if !@subdomain.nil? && @subdomain.to_s.length < 1
+      return false if !@subdomain.nil? && @subdomain !~ Regexp.new(/^[-a-zA-Z0-9_]+$/)
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] name Value to be assigned
+    def name=(name)
+      if !name.nil? && name.to_s.length < 1
+        fail ArgumentError, 'invalid value for "name", the character length must be great than or equal to 1.'
+      end
+
+      @name = name
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] subdomain Value to be assigned
+    def subdomain=(subdomain)
+      if !subdomain.nil? && subdomain.to_s.length < 1
+        fail ArgumentError, 'invalid value for "subdomain", the character length must be great than or equal to 1.'
+      end
+
+      if !subdomain.nil? && subdomain !~ Regexp.new(/^[-a-zA-Z0-9_]+$/)
+        fail ArgumentError, 'invalid value for "subdomain", must conform to the pattern /^[-a-zA-Z0-9_]+$/.'
+      end
+
+      @subdomain = subdomain
     end
 
     # Checks equality by comparing each attribute.
@@ -97,10 +116,9 @@ module SignRequestClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          _next == o._next &&
-          previous == o.previous &&
-          results == o.results
+          name == o.name &&
+          subdomain == o.subdomain &&
+          url == o.url
     end
 
     # @see the `==` method
@@ -112,7 +130,7 @@ module SignRequestClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, _next, previous, results].hash
+      [name, subdomain, url].hash
     end
 
     # Builds the object from hash
