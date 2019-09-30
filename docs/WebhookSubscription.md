@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **event_type** | **String** |  | 
 **callback_url** | **String** |  | 
 **integration** | **String** |  | [optional] 
+**team** | [**DocumentTeam**](DocumentTeam.md) |  | [optional] 
 **created** | **DateTime** |  | [optional] 
 
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **String** | Defaults to filename | [optional] 
 **uuid** | **String** |  | [optional] 
 **user** | [**User**](User.md) |  | [optional] 
+**team** | [**DocumentTeam**](DocumentTeam.md) |  | [optional] 
 **who** | **String** | &#x60;m&#x60;: only me, &#x60;mo&#x60;: me and others, &#x60;o&#x60;: only others | [optional] 
 **signers** | [**Array&lt;DocumentSignerTemplateConf&gt;**](DocumentSignerTemplateConf.md) |  | [optional] 
 

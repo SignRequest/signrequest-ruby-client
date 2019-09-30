@@ -13,32 +13,26 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module SignRequestClient
-  class InlineResponse2003
-    attr_accessor :count
+  class DocumentSigningLog
+    # Temporary URL to signing log, expires in five minutes
+    attr_accessor :pdf
 
-    attr_accessor :_next
-
-    attr_accessor :previous
-
-    attr_accessor :results
+    # SHA256 hash of PDF contents
+    attr_accessor :security_hash
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'_next' => :'next',
-        :'previous' => :'previous',
-        :'results' => :'results'
+        :'pdf' => :'pdf',
+        :'security_hash' => :'security_hash'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'count' => :'Integer',
-        :'_next' => :'String',
-        :'previous' => :'String',
-        :'results' => :'Array<Document>'
+        :'pdf' => :'String',
+        :'security_hash' => :'String'
       }
     end
 
@@ -50,22 +44,12 @@ module SignRequestClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'count')
-        self.count = attributes[:'count']
+      if attributes.has_key?(:'pdf')
+        self.pdf = attributes[:'pdf']
       end
 
-      if attributes.has_key?(:'next')
-        self._next = attributes[:'next']
-      end
-
-      if attributes.has_key?(:'previous')
-        self.previous = attributes[:'previous']
-      end
-
-      if attributes.has_key?(:'results')
-        if (value = attributes[:'results']).is_a?(Array)
-          self.results = value
-        end
+      if attributes.has_key?(:'security_hash')
+        self.security_hash = attributes[:'security_hash']
       end
     end
 
@@ -73,12 +57,8 @@ module SignRequestClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @count.nil?
-        invalid_properties.push('invalid value for "count", count cannot be nil.')
-      end
-
-      if @results.nil?
-        invalid_properties.push('invalid value for "results", results cannot be nil.')
+      if !@security_hash.nil? && @security_hash.to_s.length < 1
+        invalid_properties.push('invalid value for "security_hash", the character length must be great than or equal to 1.')
       end
 
       invalid_properties
@@ -87,9 +67,18 @@ module SignRequestClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @count.nil?
-      return false if @results.nil?
+      return false if !@security_hash.nil? && @security_hash.to_s.length < 1
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] security_hash Value to be assigned
+    def security_hash=(security_hash)
+      if !security_hash.nil? && security_hash.to_s.length < 1
+        fail ArgumentError, 'invalid value for "security_hash", the character length must be great than or equal to 1.'
+      end
+
+      @security_hash = security_hash
     end
 
     # Checks equality by comparing each attribute.
@@ -97,10 +86,8 @@ module SignRequestClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          _next == o._next &&
-          previous == o.previous &&
-          results == o.results
+          pdf == o.pdf &&
+          security_hash == o.security_hash
     end
 
     # @see the `==` method
@@ -112,7 +99,7 @@ module SignRequestClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, _next, previous, results].hash
+      [pdf, security_hash].hash
     end
 
     # Builds the object from hash

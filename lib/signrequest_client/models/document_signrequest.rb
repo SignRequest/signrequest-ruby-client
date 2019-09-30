@@ -13,7 +13,7 @@ Swagger Codegen version: 2.4.8
 require 'date'
 
 module SignRequestClient
-  class SignRequest
+  class DocumentSignrequest
     # Email of user sending the SignRequest (must be a validated email)
     attr_accessor :from_email
 
@@ -31,7 +31,6 @@ module SignRequestClient
     # URL at which SignRequest will redirect to when a document is declined
     attr_accessor :redirect_url_declined
 
-    # Attachments that signers are required to upload
     attr_accessor :required_attachments
 
     # Disable uploading/adding of attachments
@@ -73,14 +72,6 @@ module SignRequestClient
     attr_accessor :signers
 
     attr_accessor :uuid
-
-    attr_accessor :url
-
-    attr_accessor :document
-
-    attr_accessor :integration
-
-    attr_accessor :integration_data
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -127,11 +118,7 @@ module SignRequestClient
         :'who' => :'who',
         :'send_reminders' => :'send_reminders',
         :'signers' => :'signers',
-        :'uuid' => :'uuid',
-        :'url' => :'url',
-        :'document' => :'document',
-        :'integration' => :'integration',
-        :'integration_data' => :'integration_data'
+        :'uuid' => :'uuid'
       }
     end
 
@@ -158,11 +145,7 @@ module SignRequestClient
         :'who' => :'String',
         :'send_reminders' => :'BOOLEAN',
         :'signers' => :'Array<Signer>',
-        :'uuid' => :'String',
-        :'url' => :'String',
-        :'document' => :'String',
-        :'integration' => :'String',
-        :'integration_data' => :'String'
+        :'uuid' => :'String'
       }
     end
 
@@ -246,8 +229,6 @@ module SignRequestClient
 
       if attributes.has_key?(:'who')
         self.who = attributes[:'who']
-      else
-        self.who = 'o'
       end
 
       if attributes.has_key?(:'send_reminders')
@@ -263,66 +244,42 @@ module SignRequestClient
       if attributes.has_key?(:'uuid')
         self.uuid = attributes[:'uuid']
       end
-
-      if attributes.has_key?(:'url')
-        self.url = attributes[:'url']
-      end
-
-      if attributes.has_key?(:'document')
-        self.document = attributes[:'document']
-      end
-
-      if attributes.has_key?(:'integration')
-        self.integration = attributes[:'integration']
-      end
-
-      if attributes.has_key?(:'integration_data')
-        self.integration_data = attributes[:'integration_data']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if !@from_email.nil? && @from_email.to_s.length > 255
-        invalid_properties.push('invalid value for "from_email", the character length must be smaller than or equal to 255.')
-      end
-
       if !@from_email.nil? && @from_email.to_s.length < 1
         invalid_properties.push('invalid value for "from_email", the character length must be great than or equal to 1.')
       end
 
-      if !@from_email_name.nil? && @from_email_name.to_s.length > 255
-        invalid_properties.push('invalid value for "from_email_name", the character length must be smaller than or equal to 255.')
+      if !@from_email_name.nil? && @from_email_name.to_s.length < 1
+        invalid_properties.push('invalid value for "from_email_name", the character length must be great than or equal to 1.')
       end
 
       if !@prepare_url.nil? && @prepare_url.to_s.length < 1
         invalid_properties.push('invalid value for "prepare_url", the character length must be great than or equal to 1.')
       end
 
-      if !@redirect_url.nil? && @redirect_url.to_s.length > 2100
-        invalid_properties.push('invalid value for "redirect_url", the character length must be smaller than or equal to 2100.')
+      if !@redirect_url.nil? && @redirect_url.to_s.length < 1
+        invalid_properties.push('invalid value for "redirect_url", the character length must be great than or equal to 1.')
       end
 
-      if !@redirect_url_declined.nil? && @redirect_url_declined.to_s.length > 2100
-        invalid_properties.push('invalid value for "redirect_url_declined", the character length must be smaller than or equal to 2100.')
+      if !@redirect_url_declined.nil? && @redirect_url_declined.to_s.length < 1
+        invalid_properties.push('invalid value for "redirect_url_declined", the character length must be great than or equal to 1.')
       end
 
-      if !@subject.nil? && @subject.to_s.length > 512
-        invalid_properties.push('invalid value for "subject", the character length must be smaller than or equal to 512.')
+      if !@subject.nil? && @subject.to_s.length < 1
+        invalid_properties.push('invalid value for "subject", the character length must be great than or equal to 1.')
       end
 
-      if @signers.nil?
-        invalid_properties.push('invalid value for "signers", signers cannot be nil.')
+      if !@message.nil? && @message.to_s.length < 1
+        invalid_properties.push('invalid value for "message", the character length must be great than or equal to 1.')
       end
 
       if !@uuid.nil? && @uuid.to_s.length < 1
         invalid_properties.push('invalid value for "uuid", the character length must be great than or equal to 1.')
-      end
-
-      if @document.nil?
-        invalid_properties.push('invalid value for "document", document cannot be nil.')
       end
 
       invalid_properties
@@ -331,30 +288,22 @@ module SignRequestClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@from_email.nil? && @from_email.to_s.length > 255
       return false if !@from_email.nil? && @from_email.to_s.length < 1
-      return false if !@from_email_name.nil? && @from_email_name.to_s.length > 255
+      return false if !@from_email_name.nil? && @from_email_name.to_s.length < 1
       return false if !@prepare_url.nil? && @prepare_url.to_s.length < 1
-      return false if !@redirect_url.nil? && @redirect_url.to_s.length > 2100
-      return false if !@redirect_url_declined.nil? && @redirect_url_declined.to_s.length > 2100
-      return false if !@subject.nil? && @subject.to_s.length > 512
+      return false if !@redirect_url.nil? && @redirect_url.to_s.length < 1
+      return false if !@redirect_url_declined.nil? && @redirect_url_declined.to_s.length < 1
+      return false if !@subject.nil? && @subject.to_s.length < 1
+      return false if !@message.nil? && @message.to_s.length < 1
       who_validator = EnumAttributeValidator.new('String', ['m', 'mo', 'o'])
       return false unless who_validator.valid?(@who)
-      return false if @signers.nil?
       return false if !@uuid.nil? && @uuid.to_s.length < 1
-      return false if @document.nil?
-      integration_validator = EnumAttributeValidator.new('String', ['mfiles', 'salesforce', 'formdesk', 'zapier', 'txhash'])
-      return false unless integration_validator.valid?(@integration)
       true
     end
 
     # Custom attribute writer method with validation
     # @param [Object] from_email Value to be assigned
     def from_email=(from_email)
-      if !from_email.nil? && from_email.to_s.length > 255
-        fail ArgumentError, 'invalid value for "from_email", the character length must be smaller than or equal to 255.'
-      end
-
       if !from_email.nil? && from_email.to_s.length < 1
         fail ArgumentError, 'invalid value for "from_email", the character length must be great than or equal to 1.'
       end
@@ -365,8 +314,8 @@ module SignRequestClient
     # Custom attribute writer method with validation
     # @param [Object] from_email_name Value to be assigned
     def from_email_name=(from_email_name)
-      if !from_email_name.nil? && from_email_name.to_s.length > 255
-        fail ArgumentError, 'invalid value for "from_email_name", the character length must be smaller than or equal to 255.'
+      if !from_email_name.nil? && from_email_name.to_s.length < 1
+        fail ArgumentError, 'invalid value for "from_email_name", the character length must be great than or equal to 1.'
       end
 
       @from_email_name = from_email_name
@@ -385,8 +334,8 @@ module SignRequestClient
     # Custom attribute writer method with validation
     # @param [Object] redirect_url Value to be assigned
     def redirect_url=(redirect_url)
-      if !redirect_url.nil? && redirect_url.to_s.length > 2100
-        fail ArgumentError, 'invalid value for "redirect_url", the character length must be smaller than or equal to 2100.'
+      if !redirect_url.nil? && redirect_url.to_s.length < 1
+        fail ArgumentError, 'invalid value for "redirect_url", the character length must be great than or equal to 1.'
       end
 
       @redirect_url = redirect_url
@@ -395,8 +344,8 @@ module SignRequestClient
     # Custom attribute writer method with validation
     # @param [Object] redirect_url_declined Value to be assigned
     def redirect_url_declined=(redirect_url_declined)
-      if !redirect_url_declined.nil? && redirect_url_declined.to_s.length > 2100
-        fail ArgumentError, 'invalid value for "redirect_url_declined", the character length must be smaller than or equal to 2100.'
+      if !redirect_url_declined.nil? && redirect_url_declined.to_s.length < 1
+        fail ArgumentError, 'invalid value for "redirect_url_declined", the character length must be great than or equal to 1.'
       end
 
       @redirect_url_declined = redirect_url_declined
@@ -405,11 +354,21 @@ module SignRequestClient
     # Custom attribute writer method with validation
     # @param [Object] subject Value to be assigned
     def subject=(subject)
-      if !subject.nil? && subject.to_s.length > 512
-        fail ArgumentError, 'invalid value for "subject", the character length must be smaller than or equal to 512.'
+      if !subject.nil? && subject.to_s.length < 1
+        fail ArgumentError, 'invalid value for "subject", the character length must be great than or equal to 1.'
       end
 
       @subject = subject
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] message Value to be assigned
+    def message=(message)
+      if !message.nil? && message.to_s.length < 1
+        fail ArgumentError, 'invalid value for "message", the character length must be great than or equal to 1.'
+      end
+
+      @message = message
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -430,16 +389,6 @@ module SignRequestClient
       end
 
       @uuid = uuid
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] integration Object to be assigned
-    def integration=(integration)
-      validator = EnumAttributeValidator.new('String', ['mfiles', 'salesforce', 'formdesk', 'zapier', 'txhash'])
-      unless validator.valid?(integration)
-        fail ArgumentError, 'invalid value for "integration", must be one of #{validator.allowable_values}.'
-      end
-      @integration = integration
     end
 
     # Checks equality by comparing each attribute.
@@ -467,11 +416,7 @@ module SignRequestClient
           who == o.who &&
           send_reminders == o.send_reminders &&
           signers == o.signers &&
-          uuid == o.uuid &&
-          url == o.url &&
-          document == o.document &&
-          integration == o.integration &&
-          integration_data == o.integration_data
+          uuid == o.uuid
     end
 
     # @see the `==` method
@@ -483,7 +428,7 @@ module SignRequestClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [from_email, from_email_name, is_being_prepared, prepare_url, redirect_url, redirect_url_declined, required_attachments, disable_attachments, disable_text_signatures, disable_text, disable_date, disable_emails, disable_upload_signatures, disable_blockchain_proof, text_message_verification_locked, subject, message, who, send_reminders, signers, uuid, url, document, integration, integration_data].hash
+      [from_email, from_email_name, is_being_prepared, prepare_url, redirect_url, redirect_url_declined, required_attachments, disable_attachments, disable_text_signatures, disable_text, disable_date, disable_emails, disable_upload_signatures, disable_blockchain_proof, text_message_verification_locked, subject, message, who, send_reminders, signers, uuid].hash
     end
 
     # Builds the object from hash

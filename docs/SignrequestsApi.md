@@ -32,7 +32,7 @@ end
 
 api_instance = SignRequestClient::SignrequestsApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 
 begin
@@ -141,8 +141,8 @@ end
 api_instance = SignRequestClient::SignrequestsApi.new
 
 opts = { 
-  who: "who_example", # String | 
-  from_email: "from_email_example", # String | 
+  who: 'who_example', # String | 
+  from_email: 'from_email_example', # String | 
   page: 56, # Integer | A page number within the paginated result set.
   limit: 56 # Integer | Number of results to return per page.
 }
@@ -201,7 +201,7 @@ end
 
 api_instance = SignRequestClient::SignrequestsApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 
 begin
@@ -255,7 +255,7 @@ end
 
 api_instance = SignRequestClient::SignrequestsApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 
 begin

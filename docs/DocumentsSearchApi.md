@@ -31,14 +31,14 @@ api_instance = SignRequestClient::DocumentsSearchApi.new
 opts = { 
   page: 56, # Integer | A page number within the paginated result set.
   limit: 56, # Integer | Number of results to return per page.
-  q: "q_example", # String | Normal search query
-  autocomplete: "autocomplete_example", # String | Partial search query
-  name: "name_example", # String | Document name
-  subdomain: "subdomain_example", # String | 
-  signer_emails: "signer_emails_example", # String | Email needed to sign/approve
-  status: "status_example", # String | `co`: converting, `ne`: new, `se`: sent, `vi`: viewed, `si`: signed, `do`: downloaded, `sd`: signed and downloaded, `ca`: cancelled, `de`: declined, `ec`: error converting, `es`: error sending, `xp`: expired
-  who: "who_example", # String | `m`: only me, `mo`: me and others, `o`: only others
-  format: "format_example", # String | Export format, can be `json` (default), `csv`, or `xls`
+  q: 'q_example', # String | Normal search query
+  autocomplete: 'autocomplete_example', # String | Partial search query
+  name: 'name_example', # String | Document name
+  subdomain: 'subdomain_example', # String | 
+  signer_emails: 'signer_emails_example', # String | Email needed to sign/approve
+  status: 'status_example', # String | `co`: converting, `ne`: new, `se`: sent, `vi`: viewed, `si`: signed, `do`: downloaded, `sd`: signed and downloaded, `ca`: cancelled, `de`: declined, `ec`: error converting, `es`: error sending, `xp`: expired
+  who: 'who_example', # String | `m`: only me, `mo`: me and others, `o`: only others
+  format: 'format_example', # String | Export format, can be `json` (default), `csv`, or `xls`
   signer_data: 8.14 # Float | Set to `1` to export with each signer on a separate row
 }
 

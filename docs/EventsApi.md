@@ -30,19 +30,19 @@ end
 api_instance = SignRequestClient::EventsApi.new
 
 opts = { 
-  document__uuid: "document__uuid_example", # String | 
-  document__external_id: "document__external_id_example", # String | 
-  document__signrequest__who: "document__signrequest__who_example", # String | 
-  document__signrequest__from_email: "document__signrequest__from_email_example", # String | 
-  document__status: "document__status_example", # String | 
-  document__user__email: "document__user__email_example", # String | 
-  document__user__first_name: "document__user__first_name_example", # String | 
-  document__user__last_name: "document__user__last_name_example", # String | 
-  delivered: "delivered_example", # String | 
-  delivered_on: "delivered_on_example", # String | 
-  timestamp: "timestamp_example", # String | 
-  status: "status_example", # String | 
-  event_type: "event_type_example", # String | 
+  document__uuid: 'document__uuid_example', # String | 
+  document__external_id: 'document__external_id_example', # String | 
+  document__signrequest__who: 'document__signrequest__who_example', # String | 
+  document__signrequest__from_email: 'document__signrequest__from_email_example', # String | 
+  document__status: 'document__status_example', # String | 
+  document__user__email: 'document__user__email_example', # String | 
+  document__user__first_name: 'document__user__first_name_example', # String | 
+  document__user__last_name: 'document__user__last_name_example', # String | 
+  delivered: 'delivered_example', # String | 
+  delivered_on: 'delivered_on_example', # String | 
+  timestamp: 'timestamp_example', # String | 
+  status: 'status_example', # String | 
+  event_type: 'event_type_example', # String | 
   page: 56, # Integer | A page number within the paginated result set.
   limit: 56 # Integer | Number of results to return per page.
 }

@@ -30,12 +30,12 @@ end
 api_instance = SignRequestClient::TeamMembersApi.new
 
 opts = { 
-  is_active: "is_active_example", # String | 
-  is_owner: "is_owner_example", # String | 
-  is_admin: "is_admin_example", # String | 
-  user__email: "user__email_example", # String | 
-  user__first_name: "user__first_name_example", # String | 
-  user__last_name: "user__last_name_example", # String | 
+  is_active: 'is_active_example', # String | 
+  is_owner: 'is_owner_example', # String | 
+  is_admin: 'is_admin_example', # String | 
+  user__email: 'user__email_example', # String | 
+  user__first_name: 'user__first_name_example', # String | 
+  user__last_name: 'user__last_name_example', # String | 
   page: 56, # Integer | A page number within the paginated result set.
   limit: 56 # Integer | Number of results to return per page.
 }
@@ -98,7 +98,7 @@ end
 
 api_instance = SignRequestClient::TeamMembersApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 
 begin

@@ -85,9 +85,9 @@ end
 api_instance = SignRequestClient::DocumentAttachmentsApi.new
 
 opts = { 
-  document__uuid: "document__uuid_example", # String | 
-  document__external_id: "document__external_id_example", # String | 
-  created: "created_example", # String | 
+  document__uuid: 'document__uuid_example', # String | 
+  document__external_id: 'document__external_id_example', # String | 
+  created: 'created_example', # String | 
   page: 56, # Integer | A page number within the paginated result set.
   limit: 56 # Integer | Number of results to return per page.
 }
@@ -147,7 +147,7 @@ end
 
 api_instance = SignRequestClient::DocumentAttachmentsApi.new
 
-uuid = "uuid_example" # String | 
+uuid = 'uuid_example' # String | 
 
 
 begin
