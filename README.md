@@ -8,7 +8,7 @@ SignRequestClient - the offical Ruby client for [SignRequest.com](https://signre
 
 Add this to the Gemfile:
 
-    gem 'signrequest_client', '~> 1.1.0'
+    gem 'signrequest_client', '~> 1.2.0'
 
 And then run:
 
