@@ -32,5 +32,6 @@ Name | Type | Description | Notes
 **auto_delete_after** | **DateTime** | Date and time calculated using &#x60;auto_delete_days&#x60; after which a finished document (signed/cancelled/declined) will be automatically deleted | [optional] 
 **sandbox** | **BOOLEAN** | Indicates whether document was created as part of a sandbox team | [optional] 
 **auto_expire_after** | **DateTime** | Date and time calculated using &#x60;auto_expire_days&#x60; after which a non finished document will be automatically expired | [optional] 
+**processing** | **BOOLEAN** | Indicates whether a change to the document is processing and the PDF may be out of date. It is recommended to wait until processing has finished before downloading the PDF. Webhooks are not sent until processing has been completed. | [optional] 
 
 
